@@ -1,3 +1,3 @@
 # mirkofalowka
-Mirkofalówka
+Mirkofalówka,
 przeglądarka śmiesznych obrazków
