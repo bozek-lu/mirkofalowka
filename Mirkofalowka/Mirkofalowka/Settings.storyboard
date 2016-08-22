@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cUb-kq-BWR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cqn-8R-Ufc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ustawienia-->
         <scene sceneID="ifY-M6-VRK">
             <objects>
                 <viewController id="cUb-kq-BWR" sceneMemberID="viewController">
@@ -18,12 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Lh6-QV-BEb"/>
+                    <navigationItem key="navigationItem" title="Ustawienia" id="jB5-78-luU"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYe-TT-4qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1540" y="-33"/>
+        </scene>
+        <!--Profil-->
+        <scene sceneID="6X0-eR-e8m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Cqn-8R-Ufc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profil" image="edit_user" id="Lh6-QV-BEb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="exA-9f-Z31">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cUb-kq-BWR" kind="relationship" relationship="rootViewController" id="nBK-2j-1Pv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSy-Lc-CIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="728" y="-33"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="edit_user" width="32" height="32"/>
+    </resources>
 </document>

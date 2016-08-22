@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C5O-jS-Z13">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oWF-lP-d2X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Powiadomienia-->
         <scene sceneID="BWC-RK-xYF">
             <objects>
                 <viewController id="C5O-jS-Z13" sceneMemberID="viewController">
@@ -18,12 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="5ZD-aL-bzl"/>
+                    <navigationItem key="navigationItem" title="Powiadomienia" id="R39-mb-heO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiX-7C-sPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1517" y="86"/>
+        </scene>
+        <!--Powiadomienia-->
+        <scene sceneID="Qba-Rj-Njz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oWF-lP-d2X" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Powiadomienia" image="info" id="5ZD-aL-bzl" userLabel="Powiadomienia"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GGz-Mb-VNG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C5O-jS-Z13" kind="relationship" relationship="rootViewController" id="fhA-Fl-hw2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTu-Xp-uWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="705" y="86"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="info" width="32" height="32"/>
+    </resources>
 </document>
