@@ -5,6 +5,10 @@ use_frameworks!
 target ‘Mirkofalowka’ do
 
 pod ‘Alamofire’
+pod 'CryptoSwift'
+pod 'ObjectMapper'
+pod 'AlamofireObjectMapper'
+pod 'SDWebImage'
 
 end
 

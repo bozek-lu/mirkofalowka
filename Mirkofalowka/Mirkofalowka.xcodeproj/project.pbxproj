@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6BB2AC07C872460860505AA8 /* Pods_Mirkofalowka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDFCF8B78DB8EE21DE263FA4 /* Pods_Mirkofalowka.framework */; };
+		8928AD031D7372E5002A0E7F /* HotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8928AD021D7372E5002A0E7F /* HotViewController.swift */; };
+		8928AD051D73814E002A0E7F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8928AD041D73814E002A0E7F /* User.swift */; };
+		8928AD071D738EB2002A0E7F /* MirkoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8928AD061D738EB2002A0E7F /* MirkoPost.swift */; };
+		892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B49CB1D788EFD00268B0C /* PostCell.swift */; };
+		892B49CE1D78911500268B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B49CD1D78911500268B0C /* Constants.swift */; };
 		892FA4D01D6F44D10079439A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892FA4CF1D6F44D10079439A /* Login.storyboard */; };
 		892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D21D6F45F30079439A /* LoginManager.swift */; };
+		892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D41D6F4DE30079439A /* Extensions.swift */; };
+		892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D61D6F53030079439A /* MirkoViewController.swift */; };
 		89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */; };
 		89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */; };
 		89CA2EBA1D6B9ABD0088BE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */; };
@@ -42,8 +49,15 @@
 /* Begin PBXFileReference section */
 		41C5C50C279FDF87A233ED7B /* Pods-Mirkofalowka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirkofalowka.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mirkofalowka/Pods-Mirkofalowka.debug.xcconfig"; sourceTree = "<group>"; };
 		7BFE7EC2E86F1A1492E9C364 /* Pods-Mirkofalowka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mirkofalowka.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mirkofalowka/Pods-Mirkofalowka.release.xcconfig"; sourceTree = "<group>"; };
+		8928AD021D7372E5002A0E7F /* HotViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotViewController.swift; sourceTree = "<group>"; };
+		8928AD041D73814E002A0E7F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8928AD061D738EB2002A0E7F /* MirkoPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoPost.swift; sourceTree = "<group>"; };
+		892B49CB1D788EFD00268B0C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		892B49CD1D78911500268B0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		892FA4CF1D6F44D10079439A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		892FA4D21D6F45F30079439A /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		892FA4D41D6F4DE30079439A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		892FA4D61D6F53030079439A /* MirkoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoViewController.swift; sourceTree = "<group>"; };
 		89CA2EAD1D6B9ABD0088BE95 /* Mirkofalowka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirkofalowka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CA2EB71D6B9ABD0088BE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +111,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8928AD011D7372CC002A0E7F /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				89CA2EE51D6BA35F0088BE95 /* Hot.storyboard */,
+				8928AD021D7372E5002A0E7F /* HotViewController.swift */,
+			);
+			name = Hot;
+			sourceTree = "<group>";
+		};
+		892B49CF1D78918500268B0C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				892B49CD1D78911500268B0C /* Constants.swift */,
+				892FA4D41D6F4DE30079439A /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		892B49D01D7891A700268B0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8928AD041D73814E002A0E7F /* User.swift */,
+				8928AD061D738EB2002A0E7F /* MirkoPost.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		892FA4D11D6F45DB0079439A /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,13 +171,15 @@
 		89CA2EAF1D6B9ABD0088BE95 /* Mirkofalowka */ = {
 			isa = PBXGroup;
 			children = (
+				892B49D01D7891A700268B0C /* Model */,
+				892B49CF1D78918500268B0C /* Helpers */,
+				8928AD011D7372CC002A0E7F /* Hot */,
 				892FA4D11D6F45DB0079439A /* API */,
 				89CA2EEE1D6BA45E0088BE95 /* Notifications */,
 				89CA2EED1D6BA4530088BE95 /* Settings */,
 				89CA2EEC1D6BA43D0088BE95 /* Mirko */,
 				89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */,
 				89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */,
-				89CA2EE51D6BA35F0088BE95 /* Hot.storyboard */,
 				89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */,
 				89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */,
 				89CA2EBE1D6B9ABD0088BE95 /* Info.plist */,
@@ -167,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				89CA2EE21D6BA2FE0088BE95 /* Mirko.storyboard */,
+				892FA4D61D6F53030079439A /* MirkoViewController.swift */,
+				892B49CB1D788EFD00268B0C /* PostCell.swift */,
 			);
 			name = Mirko;
 			sourceTree = "<group>";
@@ -386,8 +431,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8928AD031D7372E5002A0E7F /* HotViewController.swift in Sources */,
+				8928AD071D738EB2002A0E7F /* MirkoPost.swift in Sources */,
 				89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */,
+				8928AD051D73814E002A0E7F /* User.swift in Sources */,
+				892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */,
+				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
 				892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */,
+				892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */,
+				892B49CE1D78911500268B0C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
