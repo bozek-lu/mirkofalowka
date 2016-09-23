@@ -9,22 +9,40 @@
 import UIKit
 import SDWebImage
 
+protocol PostCellDelegate {
+    func upvoteAction(on index: IndexPath)
+}
+
 class PostCell: UITableViewCell {
+    
+    var delegate: PostCellDelegate?
+    
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var postBody: UITextView!
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var sex: UIView!
+    @IBOutlet weak var upVotes: UILabel!
     
-    func setup(post: MirkoPost) {
-        let theAttributedString = try! NSAttributedString(data: post.body.dataUsingEncoding(NSUnicodeStringEncoding, allowLossyConversion: false)!,
+    var myIndex: IndexPath?
+    
+    func setup(post: MirkoPost, index: IndexPath) {
+        let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                           documentAttributes: nil)
         
         
         postBody.attributedText = theAttributedString
-        
-        avatar.sd_setImageWithURL(NSURL(string: post.avatarURLString)!)
+        upVotes.text = "+\(post.voteCount!)"
+        avatar.sd_setImage(with: NSURL(string: post.avatarURLString)! as URL!)
         authorName.text = post.author
-        sex.backgroundColor = post.authorSex == .male ? UIColor.blueColor() : UIColor.pinkColor()
+        sex.backgroundColor = post.authorSex == .male ? UIColor.blue : UIColor.pinkColor()
+        
+        myIndex = index
     }
+    
+    @IBAction func upVoteAction(_ sender: AnyObject) {
+        print("callback with my index: \(myIndex)")
+        delegate?.upvoteAction(on: myIndex!)
+    }
+    
 }

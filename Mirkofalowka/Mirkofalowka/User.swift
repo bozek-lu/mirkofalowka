@@ -15,7 +15,7 @@ class User: Mappable {
     var avatarLink: String!
     var token: String!
     
-    required init?(_ map: Map) {
+    required init?(map: Map) {
         
     }
     

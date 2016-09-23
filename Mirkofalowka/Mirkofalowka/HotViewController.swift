@@ -12,7 +12,7 @@ class HotViewController: UIViewController {
     
     let loginManager = LoginManager()
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         loginManager.hot()
     }
 }

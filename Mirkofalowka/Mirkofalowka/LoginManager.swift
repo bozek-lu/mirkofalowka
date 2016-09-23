@@ -14,7 +14,7 @@ import CryptoSwift
 struct Wykop {
     static let key = "8YyRIFZqDp"
     static let secret = "ThittgGhCh"
-    static let connect = "D5QZIkHdGtjehXET2kCe" //Klucz Sekret	Połącznie	Użycie
+    static let connect = "D5QZIkHdGtjehXET2kCe" //Klucz Sekret	Połącznie
 }
 
 typealias MirkoResponse = ([MirkoPost]?, NSError?) -> Void
@@ -31,13 +31,13 @@ class LoginManager {
         
         let text = "dummy entry"
         
-        let parameters =  ["body" : text]
+        let parameters: [String: Any] =  ["body" : text]
         
-        //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
+//        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
         let sign = Wykop.secret + address + text
         let headers = ["apisign" : sign.md5()]
         
-        Alamofire.request(.POST, address, parameters: parameters, headers: headers)
+        Alamofire.request(address, parameters: parameters, headers: headers)
             .responseJSON { response in
                 
                 print(response)
@@ -49,10 +49,13 @@ class LoginManager {
         
         let address = baseAPI + "user/connect/appkey," + Wykop.key
         
-        Alamofire.request(.POST, address)
-        .response { (req, response, data, error) in
-            print(response)
+        Alamofire.request(address)
+        .response { (defaultResponse) in
+            print(defaultResponse.response)
         }
+//        .response { (req, response, data, error) in
+//            print(response)
+//        }
 //                 .responseJSON { response in
 //                    print(response)
 //        }
@@ -70,10 +73,12 @@ class LoginManager {
         let headers = ["apisign" : sign.md5()]
         
         
-        Alamofire.request(.POST, address, parameters: parameters, headers: headers)
+        Alamofire.request(address, parameters: parameters, headers: headers)
             .responseJSON { response in
                 
-                userkey = response.result.value!.valueForKey("userkey") as? String
+                print(response)
+                
+//                userkey = response.result.value. //valueForKey("userkey") as? String
         }
     }
     
@@ -93,7 +98,7 @@ class LoginManager {
 //        page – strona
 //        period – liczba godzin dla których mają zostać pobrane wpisy (6, 12 lub 24)
         
-        Alamofire.request(.POST, address, headers: headers)
+        Alamofire.request(address, headers: headers)
             .responseJSON { response in
                 
                 print(response)
@@ -102,7 +107,7 @@ class LoginManager {
     }
     
     
-    func micro(onCompletion: MirkoResponse) {
+    func micro(onCompletion: @escaping MirkoResponse) {
         
         let address = baseAPI + "stream/index/appkey," + Wykop.key + ",page,1"
         let sign = Wykop.secret + address
@@ -110,9 +115,9 @@ class LoginManager {
         //        appkey – klucz aplikacji
         //        page – strona
         
-        Alamofire.request(.POST, address, headers: headers)
-            .responseArray { (response: Response<[MirkoPost], NSError>) in
-                
+        Alamofire.request(address, headers: headers)
+        
+            .responseArray { (response: DataResponse<[MirkoPost]>) in
                 onCompletion(response.result.value, nil)
         }
     }

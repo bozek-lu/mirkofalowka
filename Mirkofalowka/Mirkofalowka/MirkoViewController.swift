@@ -19,10 +19,11 @@ class MirkoViewController: UITableViewController {
     override func viewDidLoad() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
-        loginManager.login()
+//        loginManager.login()
+        loginManager.connect()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 //        loginManager.connect()
         
         getPosts()
@@ -38,15 +39,15 @@ class MirkoViewController: UITableViewController {
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postsArr.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Identifier.postCell) as! PostCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as! PostCell
         
-        cell.setup(postsArr[indexPath.row])
-        
+        cell.setup(post: postsArr[indexPath.row], index: indexPath)
+        cell.delegate = self
         return cell
     }
     
@@ -54,4 +55,10 @@ class MirkoViewController: UITableViewController {
         getPosts()
     }
     
+}
+
+extension MirkoViewController: PostCellDelegate {
+    func upvoteAction(on index: IndexPath) {
+        print("i got index: \(index)")
+    }
 }
