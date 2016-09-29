@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FRs-4N-YWH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FRs-4N-YWH">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oUB-XX-Bdr" id="oMl-gF-ug2">
-                                    <frame key="frameInset" width="375" height="149"/>
+                                    <frame key="frameInset" width="375" height="149.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yoA-lW-yM3">
@@ -42,11 +42,6 @@
                                         </textView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bf-N2-Jpu">
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fr9-AH-WPq">
-                                                    <frame key="frameInset" minX="207" width="39" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="beda "/>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqZ-KS-DMn">
                                                     <fontDescription key="fontDescription" type="system" weight="black" pointSize="11"/>
                                                     <state key="normal" title="DAJE PLUSA">
@@ -56,18 +51,21 @@
                                                         <action selector="upVoteAction:" destination="oUB-XX-Bdr" eventType="touchUpInside" id="l7M-AS-gm0"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDA-g0-Ok0">
-                                                    <frame key="frameInset" minX="86" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="tu"/>
-                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commentCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRJ-OY-3CE">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="mqZ-KS-DMn" secondAttribute="trailing" constant="10" id="2O2-7D-gLI"/>
+                                                <constraint firstItem="SRJ-OY-3CE" firstAttribute="top" secondItem="0bf-N2-Jpu" secondAttribute="top" id="NNp-QO-cCK"/>
                                                 <constraint firstAttribute="height" constant="30" id="Q8O-l0-bQD"/>
+                                                <constraint firstItem="mqZ-KS-DMn" firstAttribute="leading" secondItem="SRJ-OY-3CE" secondAttribute="trailing" constant="20" id="ReR-UI-tOC"/>
                                                 <constraint firstAttribute="bottom" secondItem="mqZ-KS-DMn" secondAttribute="bottom" id="UUg-ap-DAl"/>
                                                 <constraint firstItem="mqZ-KS-DMn" firstAttribute="top" secondItem="0bf-N2-Jpu" secondAttribute="top" id="WC1-A3-qEI"/>
+                                                <constraint firstAttribute="bottom" secondItem="SRJ-OY-3CE" secondAttribute="bottom" id="iTs-Ol-aLQ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uKc-US-Kd7" userLabel="sex">
@@ -93,12 +91,12 @@
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstItem="0bf-N2-Jpu" firstAttribute="leading" secondItem="oMl-gF-ug2" secondAttribute="leading" id="4mr-YO-fqK"/>
-                                        <constraint firstItem="uKc-US-Kd7" firstAttribute="leading" secondItem="oMl-gF-ug2" secondAttribute="leadingMargin" id="5zr-1b-ZJR"/>
                                         <constraint firstItem="B1G-XI-DEi" firstAttribute="top" secondItem="oMl-gF-ug2" secondAttribute="top" constant="5" id="7db-kC-Bd8"/>
                                         <constraint firstItem="yoA-lW-yM3" firstAttribute="top" secondItem="oMl-gF-ug2" secondAttribute="topMargin" id="9QS-Ye-P2n"/>
                                         <constraint firstItem="0bf-N2-Jpu" firstAttribute="top" secondItem="t3g-0q-5Kq" secondAttribute="bottom" id="A7K-7x-4yR"/>
                                         <constraint firstItem="jCU-4k-bBB" firstAttribute="top" secondItem="oMl-gF-ug2" secondAttribute="topMargin" id="AQY-uR-y9L"/>
                                         <constraint firstAttribute="trailing" secondItem="B1G-XI-DEi" secondAttribute="trailing" constant="10" id="BwU-Je-bh7"/>
+                                        <constraint firstItem="uKc-US-Kd7" firstAttribute="leading" secondItem="yoA-lW-yM3" secondAttribute="leading" id="CYN-Mh-ML8"/>
                                         <constraint firstAttribute="bottom" secondItem="0bf-N2-Jpu" secondAttribute="bottom" id="NS7-Tc-Pmw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="t3g-0q-5Kq" secondAttribute="trailing" id="Nax-Gk-308"/>
                                         <constraint firstItem="jCU-4k-bBB" firstAttribute="leading" secondItem="yoA-lW-yM3" secondAttribute="trailing" constant="8" id="Rrz-zY-ySN"/>
@@ -107,18 +105,14 @@
                                         <constraint firstItem="t3g-0q-5Kq" firstAttribute="leading" secondItem="yoA-lW-yM3" secondAttribute="trailing" constant="8" id="cHV-V9-deb"/>
                                         <constraint firstItem="t3g-0q-5Kq" firstAttribute="top" secondItem="jCU-4k-bBB" secondAttribute="bottom" id="jDM-vw-wXE"/>
                                         <constraint firstItem="uKc-US-Kd7" firstAttribute="top" secondItem="yoA-lW-yM3" secondAttribute="bottom" id="tVZ-fg-D7l"/>
-                                        <constraint firstItem="t3g-0q-5Kq" firstAttribute="top" secondItem="oMl-gF-ug2" secondAttribute="topMargin" id="vQc-pv-IIR"/>
                                         <constraint firstItem="uKc-US-Kd7" firstAttribute="width" secondItem="yoA-lW-yM3" secondAttribute="width" id="xzE-HA-SGu"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="vQc-pv-IIR"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="authorName" destination="jCU-4k-bBB" id="FMT-lZ-uSg"/>
                                     <outlet property="avatar" destination="yoA-lW-yM3" id="oF7-cA-ICV"/>
+                                    <outlet property="commentCount" destination="SRJ-OY-3CE" id="Xld-lf-hXD"/>
+                                    <outlet property="leftInset" destination="TZF-F4-2KX" id="n0J-si-2uU"/>
                                     <outlet property="postBody" destination="t3g-0q-5Kq" id="PPQ-yh-Jeq"/>
                                     <outlet property="sex" destination="uKc-US-Kd7" id="LEb-K0-rSQ"/>
                                     <outlet property="upVotes" destination="B1G-XI-DEi" id="QSA-LV-2cz"/>
@@ -132,6 +126,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Mirko" id="7pX-Sw-ztM"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="n0F-Et-1uF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh:" destination="9rM-Sv-bD5" eventType="valueChanged" id="ROH-RS-tGu"/>
@@ -139,11 +134,20 @@
                     </refreshControl>
                     <connections>
                         <outlet property="refreshControll" destination="n0F-Et-1uF" id="Vxb-b8-g4x"/>
+                        <segue destination="FEy-zg-fir" kind="show" identifier="presentPost" id="Aqy-QE-HoM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBG-VX-erF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1605.5999999999999" y="-329.68515742128938"/>
+        </scene>
+        <!--MirkoPost-->
+        <scene sceneID="3vF-Sn-x4k">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MirkoPost" id="FEy-zg-fir" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="neH-T7-4Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2274" y="-502"/>
         </scene>
         <!--Mirko-->
         <scene sceneID="ciS-sf-bhI">

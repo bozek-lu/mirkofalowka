@@ -10,13 +10,15 @@ import Foundation
 import ObjectMapper
 
 class MirkoPost: Mappable {
-    var author: String! = ""
-    var body: String! = ""
+    var author: String!
+    var body: String!
     var id: Int!
-    var date: String! = ""
+    var date: String!
     var voteCount: Int!
     var avatarURLString: String!
-    var authorSex: Sex! = .male
+    var authorSex: Sex!
+    var commCount: Int!
+    var comments: [Comment]!
 //    {
 //    app = "<null>";
 //    author = madziazpodko;
@@ -65,6 +67,8 @@ class MirkoPost: Mappable {
         date <- map["date"]
         voteCount <- map["vote_count"]
         avatarURLString <- map["author_avatar_lo"]
+        commCount <- map["comment_count"]
+        comments <- map["comments"]
         var authSex: String!
         authSex <- map["author_sex"]
         authorSex = authSex == Sex.male.rawValue ? .male : .female

@@ -17,6 +17,7 @@
 		892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D21D6F45F30079439A /* LoginManager.swift */; };
 		892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D41D6F4DE30079439A /* Extensions.swift */; };
 		892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D61D6F53030079439A /* MirkoViewController.swift */; };
+		893588431D9D9029002F2EA8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893588421D9D9029002F2EA8 /* Comment.swift */; };
 		89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */; };
 		89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */; };
 		89CA2EBA1D6B9ABD0088BE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */; };
@@ -27,6 +28,9 @@
 		89CA2EE61D6BA35F0088BE95 /* Hot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EE51D6BA35F0088BE95 /* Hot.storyboard */; };
 		89CA2EE91D6BA3F70088BE95 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EE71D6BA3F70088BE95 /* Notifications.storyboard */; };
 		89CA2EEB1D6BA42A0088BE95 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EEA1D6BA42A0088BE95 /* Settings.storyboard */; };
+		89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */; };
+		89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21C1D9D8DB20002C0A7 /* PostController.swift */; };
+		89CDE21F1D9D8E7F0002C0A7 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,7 @@
 		892FA4D21D6F45F30079439A /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		892FA4D41D6F4DE30079439A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		892FA4D61D6F53030079439A /* MirkoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoViewController.swift; sourceTree = "<group>"; };
+		893588421D9D9029002F2EA8 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		89CA2EAD1D6B9ABD0088BE95 /* Mirkofalowka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirkofalowka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CA2EB71D6B9ABD0088BE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +79,9 @@
 		89CA2EE51D6BA35F0088BE95 /* Hot.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Hot.storyboard; sourceTree = "<group>"; };
 		89CA2EE81D6BA3F70088BE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notifications.storyboard; sourceTree = "<group>"; };
 		89CA2EEA1D6BA42A0088BE95 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MirkoPost.storyboard; sourceTree = "<group>"; };
+		89CDE21C1D9D8DB20002C0A7 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 		EDFCF8B78DB8EE21DE263FA4 /* Pods_Mirkofalowka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirkofalowka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,6 +142,7 @@
 			children = (
 				8928AD041D73814E002A0E7F /* User.swift */,
 				8928AD061D738EB2002A0E7F /* MirkoPost.swift */,
+				893588421D9D9029002F2EA8 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -142,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				892FA4D21D6F45F30079439A /* LoginManager.swift */,
+				89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 				89CA2EE21D6BA2FE0088BE95 /* Mirko.storyboard */,
 				892FA4D61D6F53030079439A /* MirkoViewController.swift */,
 				892B49CB1D788EFD00268B0C /* PostCell.swift */,
+				89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */,
+				89CDE21C1D9D8DB20002C0A7 /* PostController.swift */,
 			);
 			name = Mirko;
 			sourceTree = "<group>";
@@ -356,6 +368,7 @@
 				89CA2EBD1D6B9ABD0088BE95 /* LaunchScreen.storyboard in Resources */,
 				89CA2EBA1D6B9ABD0088BE95 /* Assets.xcassets in Resources */,
 				89CA2EE61D6BA35F0088BE95 /* Hot.storyboard in Resources */,
+				89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */,
 				89CA2EE91D6BA3F70088BE95 /* Notifications.storyboard in Resources */,
 				89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */,
 				89CA2EE41D6BA2FE0088BE95 /* Mirko.storyboard in Resources */,
@@ -433,12 +446,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8928AD031D7372E5002A0E7F /* HotViewController.swift in Sources */,
+				893588431D9D9029002F2EA8 /* Comment.swift in Sources */,
 				8928AD071D738EB2002A0E7F /* MirkoPost.swift in Sources */,
 				89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */,
 				8928AD051D73814E002A0E7F /* User.swift in Sources */,
 				892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */,
+				89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */,
 				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
 				892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */,
+				89CDE21F1D9D8E7F0002C0A7 /* PostManager.swift in Sources */,
 				892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */,
 				892B49CE1D78911500268B0C /* Constants.swift in Sources */,
 			);

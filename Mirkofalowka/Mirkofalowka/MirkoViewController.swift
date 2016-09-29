@@ -13,6 +13,7 @@ class MirkoViewController: UITableViewController {
     @IBOutlet weak var refreshControll: UIRefreshControl!
     
     var postsArr = [MirkoPost]()
+    var selectedPost: MirkoPost?
     
     let loginManager = LoginManager()
     
@@ -39,6 +40,11 @@ class MirkoViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPost = postsArr[indexPath.row]
+        self.performSegue(withIdentifier: "presentPost", sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return postsArr.count
     }
@@ -53,6 +59,12 @@ class MirkoViewController: UITableViewController {
     
     @IBAction func refresh(sender: AnyObject) {
         getPosts()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let postController = segue.destination as? PostController {
+            postController.post = selectedPost!
+        }
     }
     
 }

@@ -22,6 +22,9 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     @IBOutlet weak var sex: UIView!
     @IBOutlet weak var upVotes: UILabel!
+    @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var leftInset: NSLayoutConstraint!
+    
     
     var myIndex: IndexPath?
     
@@ -36,7 +39,23 @@ class PostCell: UITableViewCell {
         avatar.sd_setImage(with: NSURL(string: post.avatarURLString)! as URL!)
         authorName.text = post.author
         sex.backgroundColor = post.authorSex == .male ? UIColor.blue : UIColor.pinkColor()
+        commentCount.text = "\(post.commCount!)"
+        myIndex = index
+    }
+    
+    func setup(post: Comment, index: IndexPath) {
+        let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
+                                                          options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                                                          documentAttributes: nil)
         
+        
+        postBody.attributedText = theAttributedString
+        upVotes.text = "+\(post.voteCount!)"
+        avatar.sd_setImage(with: NSURL(string: post.avatarURLString)! as URL!)
+        authorName.text = post.author
+        sex.backgroundColor = post.authorSex == .male ? UIColor.blue : UIColor.pinkColor()
+        leftInset.constant = 20
+        commentCount.text = ""
         myIndex = index
     }
     

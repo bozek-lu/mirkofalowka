@@ -116,7 +116,11 @@ class LoginManager {
         //        page – strona
         
         Alamofire.request(address, headers: headers)
-        
+            .responseJSON { response in
+                
+                print(response)
+                
+            }
             .responseArray { (response: DataResponse<[MirkoPost]>) in
                 onCompletion(response.result.value, nil)
         }
