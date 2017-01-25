@@ -15,13 +15,12 @@ class MirkoViewController: UITableViewController {
     var postsArr = [MirkoPost]()
     var selectedPost: MirkoPost?
     
-    let loginManager = LoginManager()
+    let contentProvider = ContentProvider()
+    let loginProvider = LoginProvider()
     
     override func viewDidLoad() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
-//        loginManager.login()
-        loginManager.connect()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -32,7 +31,7 @@ class MirkoViewController: UITableViewController {
     }
     
     func getPosts() {
-        loginManager.micro { (posts, error) in
+        contentProvider.micro { (posts, error) in
             self.postsArr = posts!
             self.tableView.reloadData()
             self.refreshControll.endRefreshing()

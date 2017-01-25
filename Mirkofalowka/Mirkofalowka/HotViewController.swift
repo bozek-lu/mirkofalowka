@@ -10,10 +10,10 @@ import UIKit
 
 class HotViewController: UIViewController {
     
-    let loginManager = LoginManager()
+    let contentProvider = ContentProvider()
     
     override func viewDidAppear(_ animated: Bool) {
-        loginManager.hot()
+        contentProvider.hot()
     }
 }
 

@@ -8,6 +8,6 @@
 
 import Foundation
 
-class PostManager {
+class PostProvider {
     
 }

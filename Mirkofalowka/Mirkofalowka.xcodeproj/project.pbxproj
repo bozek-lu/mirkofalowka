@@ -14,7 +14,7 @@
 		892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B49CB1D788EFD00268B0C /* PostCell.swift */; };
 		892B49CE1D78911500268B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892B49CD1D78911500268B0C /* Constants.swift */; };
 		892FA4D01D6F44D10079439A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892FA4CF1D6F44D10079439A /* Login.storyboard */; };
-		892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D21D6F45F30079439A /* LoginManager.swift */; };
+		892FA4D31D6F45F30079439A /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D21D6F45F30079439A /* LoginProvider.swift */; };
 		892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D41D6F4DE30079439A /* Extensions.swift */; };
 		892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892FA4D61D6F53030079439A /* MirkoViewController.swift */; };
 		893588431D9D9029002F2EA8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893588421D9D9029002F2EA8 /* Comment.swift */; };
@@ -30,7 +30,10 @@
 		89CA2EEB1D6BA42A0088BE95 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EEA1D6BA42A0088BE95 /* Settings.storyboard */; };
 		89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */; };
 		89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21C1D9D8DB20002C0A7 /* PostController.swift */; };
-		89CDE21F1D9D8E7F0002C0A7 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */; };
+		89CDE21F1D9D8E7F0002C0A7 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */; };
+		89FC066D1DA80CED00933EBD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC066C1DA80CED00933EBD /* LoginController.swift */; };
+		89FC066F1DA80D2A00933EBD /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC066E1DA80D2A00933EBD /* ContentProvider.swift */; };
+		89FC06711DA81B6200933EBD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC06701DA81B6200933EBD /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,7 @@
 		892B49CB1D788EFD00268B0C /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		892B49CD1D78911500268B0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		892FA4CF1D6F44D10079439A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
-		892FA4D21D6F45F30079439A /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		892FA4D21D6F45F30079439A /* LoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		892FA4D41D6F4DE30079439A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		892FA4D61D6F53030079439A /* MirkoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoViewController.swift; sourceTree = "<group>"; };
 		893588421D9D9029002F2EA8 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -81,7 +84,10 @@
 		89CA2EEA1D6BA42A0088BE95 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MirkoPost.storyboard; sourceTree = "<group>"; };
 		89CDE21C1D9D8DB20002C0A7 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
-		89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		89FC066C1DA80CED00933EBD /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		89FC066E1DA80D2A00933EBD /* ContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
+		89FC06701DA81B6200933EBD /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		EDFCF8B78DB8EE21DE263FA4 /* Pods_Mirkofalowka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mirkofalowka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +149,7 @@
 				8928AD041D73814E002A0E7F /* User.swift */,
 				8928AD061D738EB2002A0E7F /* MirkoPost.swift */,
 				893588421D9D9029002F2EA8 /* Comment.swift */,
+				89FC06701DA81B6200933EBD /* Session.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -150,8 +157,9 @@
 		892FA4D11D6F45DB0079439A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				892FA4D21D6F45F30079439A /* LoginManager.swift */,
-				89CDE21E1D9D8E7F0002C0A7 /* PostManager.swift */,
+				892FA4D21D6F45F30079439A /* LoginProvider.swift */,
+				89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */,
+				89FC066E1DA80D2A00933EBD /* ContentProvider.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 		89CA2EAF1D6B9ABD0088BE95 /* Mirkofalowka */ = {
 			isa = PBXGroup;
 			children = (
+				89FC066B1DA80CA900933EBD /* Login/Connect */,
 				892B49D01D7891A700268B0C /* Model */,
 				892B49CF1D78918500268B0C /* Helpers */,
 				8928AD011D7372CC002A0E7F /* Hot */,
@@ -193,7 +202,6 @@
 				89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */,
 				89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */,
 				89CA2EBE1D6B9ABD0088BE95 /* Info.plist */,
-				892FA4CF1D6F44D10079439A /* Login.storyboard */,
 			);
 			path = Mirkofalowka;
 			sourceTree = "<group>";
@@ -242,6 +250,15 @@
 				89CA2EE71D6BA3F70088BE95 /* Notifications.storyboard */,
 			);
 			name = Notifications;
+			sourceTree = "<group>";
+		};
+		89FC066B1DA80CA900933EBD /* Login/Connect */ = {
+			isa = PBXGroup;
+			children = (
+				892FA4CF1D6F44D10079439A /* Login.storyboard */,
+				89FC066C1DA80CED00933EBD /* LoginController.swift */,
+			);
+			name = Login/Connect;
 			sourceTree = "<group>";
 		};
 		BC972FA4C7E6EF8DA4C54813 /* Pods */ = {
@@ -448,15 +465,18 @@
 				8928AD031D7372E5002A0E7F /* HotViewController.swift in Sources */,
 				893588431D9D9029002F2EA8 /* Comment.swift in Sources */,
 				8928AD071D738EB2002A0E7F /* MirkoPost.swift in Sources */,
+				89FC066D1DA80CED00933EBD /* LoginController.swift in Sources */,
 				89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */,
+				89FC06711DA81B6200933EBD /* Session.swift in Sources */,
 				8928AD051D73814E002A0E7F /* User.swift in Sources */,
 				892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */,
 				89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */,
 				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
-				892FA4D31D6F45F30079439A /* LoginManager.swift in Sources */,
-				89CDE21F1D9D8E7F0002C0A7 /* PostManager.swift in Sources */,
+				892FA4D31D6F45F30079439A /* LoginProvider.swift in Sources */,
+				89CDE21F1D9D8E7F0002C0A7 /* PostProvider.swift in Sources */,
 				892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */,
 				892B49CE1D78911500268B0C /* Constants.swift in Sources */,
+				89FC066F1DA80D2A00933EBD /* ContentProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
