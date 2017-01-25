@@ -136,6 +136,7 @@
 				8928AD021D7372E5002A0E7F /* HotViewController.swift */,
 			);
 			name = Hot;
+			path = Hot;
 			sourceTree = "<group>";
 		};
 		892B49CF1D78918500268B0C /* Helpers */ = {
@@ -145,38 +146,41 @@
 				892FA4D41D6F4DE30079439A /* Extensions.swift */,
 			);
 			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		892B49D01D7891A700268B0C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8928AD041D73814E002A0E7F /* User.swift */,
-				8928AD061D738EB2002A0E7F /* MirkoPost.swift */,
 				893588421D9D9029002F2EA8 /* Comment.swift */,
+				8928AD061D738EB2002A0E7F /* MirkoPost.swift */,
 				89FC06701DA81B6200933EBD /* Session.swift */,
+				8928AD041D73814E002A0E7F /* User.swift */,
 			);
 			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		892FA4D11D6F45DB0079439A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				89FC066E1DA80D2A00933EBD /* ContentProvider.swift */,
 				892FA4D21D6F45F30079439A /* LoginProvider.swift */,
 				89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */,
-				89FC066E1DA80D2A00933EBD /* ContentProvider.swift */,
 			);
 			name = API;
+			path = API;
 			sourceTree = "<group>";
 		};
 		89CA2EA41D6B9ABD0088BE95 = {
 			isa = PBXGroup;
 			children = (
+				6DA4C27944A529E66696195C /* Frameworks */,
 				89CA2EAF1D6B9ABD0088BE95 /* Mirkofalowka */,
 				89CA2EC61D6B9ABD0088BE95 /* MirkofalowkaTests */,
 				89CA2ED11D6B9ABD0088BE95 /* MirkofalowkaUITests */,
-				89CA2EAE1D6B9ABD0088BE95 /* Products */,
 				BC972FA4C7E6EF8DA4C54813 /* Pods */,
-				6DA4C27944A529E66696195C /* Frameworks */,
+				89CA2EAE1D6B9ABD0088BE95 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,19 +197,19 @@
 		89CA2EAF1D6B9ABD0088BE95 /* Mirkofalowka */ = {
 			isa = PBXGroup;
 			children = (
-				89FC066B1DA80CA900933EBD /* Login/Connect */,
 				892FA4D11D6F45DB0079439A /* API */,
-				892B49D01D7891A700268B0C /* Model */,
 				892B49CF1D78918500268B0C /* Helpers */,
 				8928AD011D7372CC002A0E7F /* Hot */,
+				89FC066B1DA80CA900933EBD /* Login and Connect */,
+				89CA2EEC1D6BA43D0088BE95 /* Mirko */,
+				892B49D01D7891A700268B0C /* Model */,
 				89CA2EEE1D6BA45E0088BE95 /* Notifications */,
 				89CA2EED1D6BA4530088BE95 /* Settings */,
-				89CA2EEC1D6BA43D0088BE95 /* Mirko */,
 				89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */,
-				89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */,
 				89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */,
-				89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */,
 				89CA2EBE1D6B9ABD0088BE95 /* Info.plist */,
+				89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */,
+				89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */,
 				89F1CE621E3934DF005E5448 /* MainTabBarController.swift */,
 			);
 			path = Mirkofalowka;
@@ -214,8 +218,8 @@
 		89CA2EC61D6B9ABD0088BE95 /* MirkofalowkaTests */ = {
 			isa = PBXGroup;
 			children = (
-				89CA2EC71D6B9ABD0088BE95 /* MirkofalowkaTests.swift */,
 				89CA2EC91D6B9ABD0088BE95 /* Info.plist */,
+				89CA2EC71D6B9ABD0088BE95 /* MirkofalowkaTests.swift */,
 			);
 			path = MirkofalowkaTests;
 			sourceTree = "<group>";
@@ -223,8 +227,8 @@
 		89CA2ED11D6B9ABD0088BE95 /* MirkofalowkaUITests */ = {
 			isa = PBXGroup;
 			children = (
-				89CA2ED21D6B9ABE0088BE95 /* MirkofalowkaUITests.swift */,
 				89CA2ED41D6B9ABE0088BE95 /* Info.plist */,
+				89CA2ED21D6B9ABE0088BE95 /* MirkofalowkaUITests.swift */,
 			);
 			path = MirkofalowkaUITests;
 			sourceTree = "<group>";
@@ -233,13 +237,14 @@
 			isa = PBXGroup;
 			children = (
 				89CA2EE21D6BA2FE0088BE95 /* Mirko.storyboard */,
+				89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */,
 				892FA4D61D6F53030079439A /* MirkoViewController.swift */,
 				892B49CB1D788EFD00268B0C /* PostCell.swift */,
-				89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */,
-				89CDE21C1D9D8DB20002C0A7 /* PostController.swift */,
 				89F1CE601E3927BF005E5448 /* PostCell.xib */,
+				89CDE21C1D9D8DB20002C0A7 /* PostController.swift */,
 			);
 			name = Mirko;
+			path = Mirko;
 			sourceTree = "<group>";
 		};
 		89CA2EED1D6BA4530088BE95 /* Settings */ = {
@@ -248,6 +253,7 @@
 				89CA2EEA1D6BA42A0088BE95 /* Settings.storyboard */,
 			);
 			name = Settings;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		89CA2EEE1D6BA45E0088BE95 /* Notifications */ = {
@@ -256,15 +262,17 @@
 				89CA2EE71D6BA3F70088BE95 /* Notifications.storyboard */,
 			);
 			name = Notifications;
+			path = Notifications;
 			sourceTree = "<group>";
 		};
-		89FC066B1DA80CA900933EBD /* Login/Connect */ = {
+		89FC066B1DA80CA900933EBD /* Login and Connect */ = {
 			isa = PBXGroup;
 			children = (
 				892FA4CF1D6F44D10079439A /* Login.storyboard */,
 				89FC066C1DA80CED00933EBD /* LoginController.swift */,
 			);
-			name = Login/Connect;
+			name = "Login and Connect";
+			path = "Login and Connect";
 			sourceTree = "<group>";
 		};
 		BC972FA4C7E6EF8DA4C54813 /* Pods */ = {
@@ -526,6 +534,7 @@
 				89CA2EB71D6B9ABD0088BE95 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */ = {
@@ -534,6 +543,7 @@
 				89CA2EBC1D6B9ABD0088BE95 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		89CA2EE21D6BA2FE0088BE95 /* Mirko.storyboard */ = {
@@ -542,6 +552,7 @@
 				89CA2EE31D6BA2FE0088BE95 /* Base */,
 			);
 			name = Mirko.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		89CA2EE71D6BA3F70088BE95 /* Notifications.storyboard */ = {
@@ -550,6 +561,7 @@
 				89CA2EE81D6BA3F70088BE95 /* Base */,
 			);
 			name = Notifications.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
