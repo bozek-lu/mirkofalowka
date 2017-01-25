@@ -11,6 +11,7 @@ import SDWebImage
 
 protocol PostCellDelegate {
     func upvoteAction(on index: IndexPath)
+    func openSafari(with link: URL)
 }
 
 class PostCell: UITableViewCell {
@@ -25,10 +26,16 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var leftInset: NSLayoutConstraint!
     
+    @IBOutlet weak var safariButton: UIView!
     
+    var cellPost: MirkoPost?
     var myIndex: IndexPath?
     
     func setup(post: MirkoPost, index: IndexPath) {
+        cellPost = post
+        
+//        safariButton.isHidden = false
+        
         let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                           documentAttributes: nil)
@@ -39,11 +46,12 @@ class PostCell: UITableViewCell {
         avatar.sd_setImage(with: NSURL(string: post.avatarURLString)! as URL!)
         authorName.text = post.author
         sex.backgroundColor = post.authorSex == .male ? UIColor.blue : UIColor.pinkColor()
-        commentCount.text = "\(post.commCount!)"
+        commentCount.text = "komentarzy: \(post.commCount!)"
         myIndex = index
     }
     
     func setup(post: Comment, index: IndexPath) {
+//        safariButton.isHidden = false
         let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                           documentAttributes: nil)
@@ -57,6 +65,11 @@ class PostCell: UITableViewCell {
         leftInset.constant = 20
         commentCount.text = ""
         myIndex = index
+    }
+    
+    @IBAction func openSafari(_ sender: Any) {
+        let url = URL(string: cellPost!.postURL)
+        delegate?.openSafari(with: url!)
     }
     
     @IBAction func upVoteAction(_ sender: AnyObject) {

@@ -17,7 +17,8 @@ struct Wykop {
     static let connect = "D5QZIkHdGtjehXET2kCe" //Klucz Sekret	Połącznie
 }
 
-typealias MirkoResponse = ([MirkoPost]?, NSError?) -> Void
+typealias MirkoResponse = ([MirkoPost]) -> Void
+typealias LoginResponse = (Bool) -> Void
 
 var userkey: String?
 
@@ -42,14 +43,14 @@ class LoginProvider {
 //        }
     }
     
-    func login() {
+    func login(completion: @escaping LoginResponse) {
         
         let address = baseAPI + "user/login/appkey," + Wykop.key
         
-        let parameters =  ["accountkey" : Session.sharedInstance.userToken]
+        let parameters =  ["accountkey" : Session.shared.userToken]
         
 //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
-        let sign = Wykop.secret + address + Wykop.connect
+        let sign = Wykop.secret + address + "," + Session.shared.userToken!
         print(sign.md5())
         let headers = ["apisign" : sign.md5()]
         
@@ -58,6 +59,8 @@ class LoginProvider {
             .responseJSON { response in
                 
                 print(response)
+                
+                completion(true)
                 
 //                userkey = response.result.value. //valueForKey("userkey") as? String
         }

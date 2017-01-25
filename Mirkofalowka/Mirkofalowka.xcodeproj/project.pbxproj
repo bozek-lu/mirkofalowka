@@ -31,6 +31,8 @@
 		89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */; };
 		89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21C1D9D8DB20002C0A7 /* PostController.swift */; };
 		89CDE21F1D9D8E7F0002C0A7 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */; };
+		89F1CE611E3927BF005E5448 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89F1CE601E3927BF005E5448 /* PostCell.xib */; };
+		89F1CE631E3934DF005E5448 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F1CE621E3934DF005E5448 /* MainTabBarController.swift */; };
 		89FC066D1DA80CED00933EBD /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC066C1DA80CED00933EBD /* LoginController.swift */; };
 		89FC066F1DA80D2A00933EBD /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC066E1DA80D2A00933EBD /* ContentProvider.swift */; };
 		89FC06711DA81B6200933EBD /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FC06701DA81B6200933EBD /* Session.swift */; };
@@ -85,6 +87,8 @@
 		89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MirkoPost.storyboard; sourceTree = "<group>"; };
 		89CDE21C1D9D8DB20002C0A7 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		89F1CE601E3927BF005E5448 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		89F1CE621E3934DF005E5448 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		89FC066C1DA80CED00933EBD /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		89FC066E1DA80D2A00933EBD /* ContentProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
 		89FC06701DA81B6200933EBD /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -190,10 +194,10 @@
 			isa = PBXGroup;
 			children = (
 				89FC066B1DA80CA900933EBD /* Login/Connect */,
+				892FA4D11D6F45DB0079439A /* API */,
 				892B49D01D7891A700268B0C /* Model */,
 				892B49CF1D78918500268B0C /* Helpers */,
 				8928AD011D7372CC002A0E7F /* Hot */,
-				892FA4D11D6F45DB0079439A /* API */,
 				89CA2EEE1D6BA45E0088BE95 /* Notifications */,
 				89CA2EED1D6BA4530088BE95 /* Settings */,
 				89CA2EEC1D6BA43D0088BE95 /* Mirko */,
@@ -202,6 +206,7 @@
 				89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */,
 				89CA2EBB1D6B9ABD0088BE95 /* LaunchScreen.storyboard */,
 				89CA2EBE1D6B9ABD0088BE95 /* Info.plist */,
+				89F1CE621E3934DF005E5448 /* MainTabBarController.swift */,
 			);
 			path = Mirkofalowka;
 			sourceTree = "<group>";
@@ -232,6 +237,7 @@
 				892B49CB1D788EFD00268B0C /* PostCell.swift */,
 				89CDE21A1D9D8D8C0002C0A7 /* MirkoPost.storyboard */,
 				89CDE21C1D9D8DB20002C0A7 /* PostController.swift */,
+				89F1CE601E3927BF005E5448 /* PostCell.xib */,
 			);
 			name = Mirko;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */,
 				89CA2EE91D6BA3F70088BE95 /* Notifications.storyboard in Resources */,
 				89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */,
+				89F1CE611E3927BF005E5448 /* PostCell.xib in Resources */,
 				89CA2EE41D6BA2FE0088BE95 /* Mirko.storyboard in Resources */,
 				89CA2EEB1D6BA42A0088BE95 /* Settings.storyboard in Resources */,
 			);
@@ -472,6 +479,7 @@
 				892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */,
 				89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */,
 				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
+				89F1CE631E3934DF005E5448 /* MainTabBarController.swift in Sources */,
 				892FA4D31D6F45F30079439A /* LoginProvider.swift in Sources */,
 				89CDE21F1D9D8E7F0002C0A7 /* PostProvider.swift in Sources */,
 				892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */,

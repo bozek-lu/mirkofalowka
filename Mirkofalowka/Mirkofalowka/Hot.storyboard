@@ -1,25 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A270f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uZ2-rF-MyA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uZ2-rF-MyA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Gorące-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="HotViewController" customModule="Mirkofalowka" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8rJ-Kc-sve" customClass="HotViewController" customModule="Mirkofalowka" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.34181510098191337" green="1" blue="0.029352588406026614" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3zv-em-sLL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="9uf-lP-aLy"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="6Ox-8s-7bZ"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="GmU-GM-fVN">
+                                <rect key="frame" x="0.0" y="323" width="375" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3zv-em-sLL" secondAttribute="trailing" id="0f9-Ux-lYJ"/>
+                            <constraint firstItem="GmU-GM-fVN" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="1mo-uk-jA6"/>
+                            <constraint firstItem="GmU-GM-fVN" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="52u-Ff-PyI"/>
+                            <constraint firstItem="3zv-em-sLL" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="AU9-cY-nPf"/>
+                            <constraint firstItem="3zv-em-sLL" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="e9M-LS-9tJ"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="3zv-em-sLL" secondAttribute="bottom" id="lcD-s1-fOI"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Gorące" id="aSo-Gy-iuO"/>
+                    <navigationItem key="navigationItem" title="Gorące" id="aSo-Gy-iuO">
+                        <barButtonItem key="rightBarButtonItem" title="6h" id="kjs-LB-20C">
+                            <connections>
+                                <action selector="selectTimePeriod:" destination="8rJ-Kc-sve" id="SXC-iC-8RT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="indicator" destination="GmU-GM-fVN" id="yYH-mZ-2xF"/>
+                        <outlet property="tableView" destination="3zv-em-sLL" id="gXp-ix-lBp"/>
+                        <segue destination="ibz-Oz-Cco" kind="show" identifier="presentPost" id="vgh-iO-MKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -43,6 +79,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hk1-Gk-Ygi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--MirkoPost-->
+        <scene sceneID="cA5-lv-7lp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MirkoPost" id="ibz-Oz-Cco" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aiN-v9-HGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="291"/>
         </scene>
     </scenes>
     <resources>

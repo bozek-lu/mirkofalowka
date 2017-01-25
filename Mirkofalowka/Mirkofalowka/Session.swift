@@ -9,9 +9,11 @@
 import Foundation
 
 class Session {
-    static let sharedInstance = Session()
+    static let shared = Session()
     
     private(set) var userToken: String?
+    
+    var period = 6
     
     func setUserToken(tok: String) {
         self.userToken = tok

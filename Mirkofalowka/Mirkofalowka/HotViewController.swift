@@ -7,13 +7,117 @@
 //
 
 import UIKit
+import SafariServices
 
 class HotViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     
     let contentProvider = ContentProvider()
     
+    var postsArr = [MirkoPost]()
+    var selectedPost: MirkoPost?
+    
+    
+    override func viewDidLoad() {
+        tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: Identifier.postCell)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 60
+        
+        getPosts(page: 1)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-        contentProvider.hot()
+//        contentProvider.hot()
+    }
+    
+    func getPosts(page: Int) {
+        indicator.isHidden = false
+        contentProvider.hot(page: page) { posts in
+            self.indicator.isHidden = true
+            self.postsArr.append(contentsOf: posts)
+            self.tableView.reloadData()
+            //            self.loginManager.dummyPost()
+        }
+    }
+    
+    @IBAction func selectTimePeriod(_ sender: Any) {
+        let alert = UIAlertController(title: "Gorące z:", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "6h", style: .default , handler: { UIAlertAction in
+            Session.shared.period = 6
+            
+            self.loadAgain()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "12h", style: .default , handler: { UIAlertAction in
+            print("User click Approve button")
+            Session.shared.period = 12
+            
+            self.loadAgain()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "24h", style: .default , handler: { UIAlertAction in
+            print("User click Approve button")
+            Session.shared.period = 24
+            
+            self.loadAgain()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Anuluj", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func loadAgain() {
+        self.postsArr = []
+        self.tableView.reloadData()
+        self.getPosts(page: 1)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let postController = segue.destination as? PostController {
+            postController.post = selectedPost!
+        }
     }
 }
 
+extension HotViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedPost = postsArr[indexPath.row]
+        self.performSegue(withIdentifier: "presentPost", sender: self)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return postsArr.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as? PostCell
+        
+        if cell == nil {
+            cell = PostCell(style: .default, reuseIdentifier: Identifier.postCell)
+        }
+        
+        if indexPath.row == postsArr.count - 1 {
+            getPosts(page: Int(postsArr.count / 25) + 1)
+        }
+        
+        cell!.setup(post: postsArr[indexPath.row], index: indexPath)
+        cell!.delegate = self
+        return cell!
+    }
+}
+
+
+extension HotViewController: PostCellDelegate {
+    func openSafari(with link: URL) {
+        let safariVC = SFSafariViewController(url: link)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+    
+    func upvoteAction(on index: IndexPath) {
+        print("i got index: \(index)")
+    }
+}

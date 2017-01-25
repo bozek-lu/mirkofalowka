@@ -16,16 +16,15 @@ class LoginController: UIViewController {
     
     
     override func viewDidLoad() {
-        
-//        loginProvider.login()
-//        loginProvider.connect()
         let address = baseAPI + "user/connect/appkey," + Wykop.key
         webView.loadRequest(URLRequest(url: URL(string: address)!))
     }
     
     func login() {
-        loginProvider.login()
-        performSegue(withIdentifier: "mainView", sender: self)
+        loginProvider.login() { success in
+            self.performSegue(withIdentifier: "mainView", sender: self)
+        }
+        
     }
 }
 
@@ -41,9 +40,9 @@ extension LoginController : UIWebViewDelegate {
             let parts = urlString?.components(separatedBy: "/")
             let tok = parts![parts!.count - 2]
             
-            Session.sharedInstance.setUserToken(tok: tok)
+            Session.shared.setUserToken(tok: tok)
             
-//
+            login()
         }
         
         return true

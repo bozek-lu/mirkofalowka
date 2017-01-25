@@ -18,6 +18,7 @@ class MirkoPost: Mappable {
     var avatarURLString: String!
     var authorSex: Sex!
     var commCount: Int!
+    var postURL: String!
     var comments: [Comment]!
 //    {
 //    app = "<null>";
@@ -67,6 +68,7 @@ class MirkoPost: Mappable {
         date <- map["date"]
         voteCount <- map["vote_count"]
         avatarURLString <- map["author_avatar_lo"]
+        postURL <- map["url"]
         commCount <- map["comment_count"]
         comments <- map["comments"]
         var authSex: String!

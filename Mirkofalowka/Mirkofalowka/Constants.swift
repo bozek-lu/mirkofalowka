@@ -16,3 +16,8 @@ enum Sex: String {
 struct Identifier {
     static let postCell = "postCell"
 }
+
+struct Const {
+    static let orderValue = "order"
+    static let updateBadgeNotif = "updateBadgeNotif"
+}

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SafariServices
+
 
 class PostController: UITableViewController {
     var post: MirkoPost? {
@@ -25,6 +27,7 @@ class PostController: UITableViewController {
 //    }
     
     override func viewDidLoad() {
+        tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: Identifier.postCell)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
     }
@@ -53,6 +56,11 @@ extension PostController {
 }
 
 extension PostController: PostCellDelegate {
+    func openSafari(with link: URL) {
+        let safariVC = SFSafariViewController(url: link)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+    
     func upvoteAction(on index: IndexPath) {
         print("i got index: \(index)")
     }

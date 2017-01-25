@@ -5,7 +5,7 @@
 //  Created by Lu on 25/08/2016.
 //  Copyright © 2016 wczoraj. All rights reserved.
 //
-
+import SafariServices
 import UIKit
 
 class MirkoViewController: UITableViewController {
@@ -19,20 +19,23 @@ class MirkoViewController: UITableViewController {
     let loginProvider = LoginProvider()
     
     override func viewDidLoad() {
+        tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: Identifier.postCell)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
+        
+        getPosts(page: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
 //        loginManager.connect()
         
-        getPosts()
+//        getPosts()
         
     }
     
-    func getPosts() {
-        contentProvider.micro { (posts, error) in
-            self.postsArr = posts!
+    func getPosts(page: Int) {
+        contentProvider.micro(page: page) { posts in
+            self.postsArr.append(contentsOf: posts)
             self.tableView.reloadData()
             self.refreshControll.endRefreshing()
             //            self.loginManager.dummyPost()
@@ -49,15 +52,24 @@ class MirkoViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as! PostCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as? PostCell
         
-        cell.setup(post: postsArr[indexPath.row], index: indexPath)
-        cell.delegate = self
-        return cell
+        if cell == nil {
+            cell = PostCell(style: .default, reuseIdentifier: Identifier.postCell)
+        }
+        
+        if indexPath.row == postsArr.count - 1 {
+            getPosts(page: Int(postsArr.count / 25) + 1)
+        }
+        
+        cell!.setup(post: postsArr[indexPath.row], index: indexPath)
+        cell!.delegate = self
+        return cell!
     }
     
     @IBAction func refresh(sender: AnyObject) {
-        getPosts()
+        postsArr = []
+        getPosts(page: 1)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,6 +81,11 @@ class MirkoViewController: UITableViewController {
 }
 
 extension MirkoViewController: PostCellDelegate {
+    func openSafari(with link: URL) {
+        let safariVC = SFSafariViewController(url: link)
+        self.present(safariVC, animated: true, completion: nil)
+    }
+    
     func upvoteAction(on index: IndexPath) {
         print("i got index: \(index)")
     }
