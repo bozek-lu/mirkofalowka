@@ -13,11 +13,11 @@ import SafariServices
 class PostController: UITableViewController {
     var post: MirkoPost? {
         didSet {
-            print(post)
             postComments = post!.comments
-//            tableView?.reloadData()
         }
     }
+    
+    let postProvider = PostProvider()
     
     var postComments = [Comment]()
     
@@ -30,6 +30,20 @@ class PostController: UITableViewController {
         tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: Identifier.postCell)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
+        
+        if postComments.isEmpty {
+            getPost()
+        }
+    }
+    
+    func getPost() {
+        postProvider.getPost(id: post!.id) { post in
+            let pst = post.first
+            
+            self.postComments = pst!.comments
+            
+            self.tableView.reloadData()
+        }
     }
 }
 

@@ -34,7 +34,7 @@ class PostCell: UITableViewCell {
     func setup(post: MirkoPost, index: IndexPath) {
         cellPost = post
         
-//        safariButton.isHidden = false
+        safariButton.isHidden = false
         
         let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
@@ -51,7 +51,7 @@ class PostCell: UITableViewCell {
     }
     
     func setup(post: Comment, index: IndexPath) {
-//        safariButton.isHidden = false
+        safariButton.isHidden = true
         let theAttributedString = try! NSAttributedString(data: post.body.data(using: String.Encoding.unicode, allowLossyConversion: false)!,
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                           documentAttributes: nil)
