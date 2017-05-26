@@ -16,13 +16,18 @@ class LoginController: UIViewController {
     
     
     override func viewDidLoad() {
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         let address = baseAPI + "user/connect/appkey," + Wykop.key
         webView.loadRequest(URLRequest(url: URL(string: address)!))
     }
     
     func login() {
         loginProvider.login() { success in
-            self.performSegue(withIdentifier: "mainView", sender: self)
+//            self.performSegue(withIdentifier: "mainView", sender: self)
+            self.dismiss(animated: true, completion: nil)
         }
         
     }

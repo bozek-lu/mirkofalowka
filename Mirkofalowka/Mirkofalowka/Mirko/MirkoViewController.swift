@@ -33,6 +33,11 @@ class MirkoViewController: UITableViewController {
         
     }
     
+    @IBAction func refresh(_ sender: Any) {
+        self.postsArr = []
+        getPosts(page: 1)
+    }
+    
     func getPosts(page: Int) {
         contentProvider.micro(page: page) { posts in
             self.postsArr.append(contentsOf: posts)

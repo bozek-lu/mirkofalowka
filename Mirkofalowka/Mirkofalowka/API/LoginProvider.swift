@@ -14,7 +14,6 @@ import CryptoSwift
 struct Wykop {
     static let key = "8YyRIFZqDp"
     static let secret = "ThittgGhCh"
-    static let connect = "D5QZIkHdGtjehXET2kCe" //Klucz Sekret	Połącznie
 }
 
 typealias MirkoResponse = ([MirkoPost]) -> Void

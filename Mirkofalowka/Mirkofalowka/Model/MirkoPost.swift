@@ -20,6 +20,7 @@ class MirkoPost: Mappable {
     var commCount: Int!
     var postURL: String!
     var comments: [Comment]!
+    var embed: MediaModel!
 //    {
 //    app = "<null>";
 //    author = madziazpodko;
@@ -71,6 +72,8 @@ class MirkoPost: Mappable {
         postURL <- map["url"]
         commCount <- map["comment_count"]
         comments <- map["comments"]
+        embed <- map["embed"]
+        
         var authSex: String!
         authSex <- map["author_sex"]
         authorSex = authSex == Sex.male.rawValue ? .male : .female

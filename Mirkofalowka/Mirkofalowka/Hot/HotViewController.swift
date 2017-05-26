@@ -13,6 +13,7 @@ class HotViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     
+    @IBOutlet weak var hotPeriod: UIBarButtonItem!
     let contentProvider = ContentProvider()
     
     var postsArr = [MirkoPost]()
@@ -46,7 +47,7 @@ class HotViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "6h", style: .default , handler: { UIAlertAction in
             Session.shared.period = 6
-            
+            self.hotPeriod.title = "6h"
             self.loadAgain()
         }))
         
@@ -54,6 +55,7 @@ class HotViewController: UIViewController {
             print("User click Approve button")
             Session.shared.period = 12
             
+            self.hotPeriod.title = "12h"
             self.loadAgain()
         }))
         
@@ -61,6 +63,7 @@ class HotViewController: UIViewController {
             print("User click Approve button")
             Session.shared.period = 24
             
+            self.hotPeriod.title = "24h"
             self.loadAgain()
         }))
         

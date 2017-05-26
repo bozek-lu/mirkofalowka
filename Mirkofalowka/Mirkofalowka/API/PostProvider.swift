@@ -24,7 +24,7 @@ class PostProvider {
         Alamofire.request(address, headers: headers)
             .responseJSON { response in
                 
-                print(response)
+//                print(response)
                 
             }
             .responseObject { (response: DataResponse<MirkoPost>) in

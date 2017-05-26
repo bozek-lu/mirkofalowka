@@ -17,6 +17,7 @@ class Comment: Mappable {
     var voteCount: Int!
     var avatarURLString: String!
     var authorSex: Sex!
+    var embed: MediaModel!
     
 //    app = Android;
 //    author = Mysterii;
@@ -50,6 +51,8 @@ class Comment: Mappable {
         date <- map["date"]
         voteCount <- map["vote_count"]
         avatarURLString <- map["author_avatar_lo"]
+        embed <- map["embed"]
+        
         var authSex: String!
         authSex <- map["author_sex"]
         authorSex = authSex == Sex.male.rawValue ? .male : .female

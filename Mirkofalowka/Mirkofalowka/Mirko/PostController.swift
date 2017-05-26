@@ -38,9 +38,11 @@ class PostController: UITableViewController {
     
     func getPost() {
         postProvider.getPost(id: post!.id) { post in
-            let pst = post.first
+            guard let pst = post.first else {
+                return
+            }
             
-            self.postComments = pst!.comments
+            self.postComments = pst.comments
             
             self.tableView.reloadData()
         }
