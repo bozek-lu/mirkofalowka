@@ -176,7 +176,7 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		8948F8C81ED861B0003A3FD2 /* ViemControllers */ = {
+		8948F8C81ED861B0003A3FD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				8948F8CB1ED86BA4003A3FD2 /* main controller */,
@@ -186,7 +186,7 @@
 				89CA2EEC1D6BA43D0088BE95 /* Mirko */,
 				8928AD011D7372CC002A0E7F /* Hot */,
 			);
-			name = ViemControllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		8948F8CB1ED86BA4003A3FD2 /* main controller */ = {
@@ -227,7 +227,7 @@
 				892FA4D11D6F45DB0079439A /* API */,
 				892B49D01D7891A700268B0C /* Model */,
 				892B49CF1D78918500268B0C /* Helpers */,
-				8948F8C81ED861B0003A3FD2 /* ViemControllers */,
+				8948F8C81ED861B0003A3FD2 /* ViewControllers */,
 				89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */,
 				89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */,
 				89CA2EBE1D6B9ABD0088BE95 /* Info.plist */,
@@ -476,7 +476,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EEE870210C2707833E62696A /* [CP] Embed Pods Frameworks */ = {

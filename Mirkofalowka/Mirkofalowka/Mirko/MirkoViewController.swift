@@ -74,6 +74,7 @@ class MirkoViewController: UITableViewController {
     
     @IBAction func refresh(sender: AnyObject) {
         postsArr = []
+        tableView.reloadData()
         getPosts(page: 1)
     }
     
