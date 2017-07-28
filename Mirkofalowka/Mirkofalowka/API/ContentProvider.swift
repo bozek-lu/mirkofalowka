@@ -38,7 +38,7 @@ class ContentProvider {
     
     func hot(page: Int, completion: @escaping MirkoResponse) {
         
-        let address = baseAPI + "stream/hot/appkey," + Wykop.key + ",page," + "\(page)" + ",period," + "\(Session.shared.period)"//",userkey," + userkey!
+        let address = baseAPI + "stream/hot/appkey," + Wykop.key + ",page," + "\(page)" + ",period," + Session.shared.period//",userkey," + userkey!
         
         //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
         let sign = Wykop.secret + address

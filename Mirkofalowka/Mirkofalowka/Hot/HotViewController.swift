@@ -46,20 +46,20 @@ class HotViewController: UIViewController {
         let alert = UIAlertController(title: "Gorące z:", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "6h", style: .default , handler: { UIAlertAction in
-            UserDefaults.standard.set("6", key: "hotPeriod")
+            UserDefaults.standard.set("6", forKey: "hotPeriod")
             self.hotPeriod.title = "6h"
             self.loadAgain()
         }))
         
         alert.addAction(UIAlertAction(title: "12h", style: .default , handler: { UIAlertAction in
-            UserDefaults.standard.set("12", key: "hotPeriod")
+            UserDefaults.standard.set("12", forKey: "hotPeriod")
             
             self.hotPeriod.title = "12h"
             self.loadAgain()
         }))
         
         alert.addAction(UIAlertAction(title: "24h", style: .default , handler: { UIAlertAction in
-            UserDefaults.standard.set("24", key: "hotPeriod")
+            UserDefaults.standard.set("24", forKey: "hotPeriod")
             
             self.hotPeriod.title = "24h"
             self.loadAgain()

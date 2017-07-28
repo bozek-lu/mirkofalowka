@@ -16,7 +16,7 @@ class Session {
     }
     
     var period: String {
-        return UserDefaults.standard.value(forKey: "hotPeriod") ?? "6"
+        return UserDefaults.standard.value(forKey: "hotPeriod") as? String ?? "6"
     }
     
     func setUserToken(tok: String) {
