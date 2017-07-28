@@ -722,7 +722,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = X9M92XL2Y8;
 				INFOPLIST_FILE = Mirkofalowka/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.wczoraj.Mirkofalowka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -743,7 +743,7 @@
 				DEVELOPMENT_TEAM = X9M92XL2Y8;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Mirkofalowka/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pl.wczoraj.Mirkofalowka;
 				PRODUCT_NAME = "$(TARGET_NAME)";

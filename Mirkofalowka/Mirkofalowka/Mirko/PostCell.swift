@@ -25,6 +25,7 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
     @IBOutlet weak var leftInset: NSLayoutConstraint!
     
     @IBOutlet weak var safariButton: UIView!
+    @IBOutlet weak var safariButtonWithImg: UIButton!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var imageContainerHeight: NSLayoutConstraint!
     
@@ -43,8 +44,9 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
                                                           options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
                                                           documentAttributes: nil)
         
-        
         postBody.attributedText = theAttributedString
+        postBody.textColor = .white
+        
         upVotes.text = "+\(post.voteCount!)"
         if leftInset != nil {
             leftInset.constant = 2
@@ -61,6 +63,11 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
             postImage.sd_setImage(with: URL(string: embed.preview)!)
         }
         
+        let origImage = #imageLiteral(resourceName: "safari")
+        let tintedImage = origImage.withRenderingMode(.alwaysTemplate)
+        safariButtonWithImg.setImage(tintedImage, for: .normal)
+        safariButtonWithImg.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
+        
         layoutIfNeeded()
     }
     
@@ -72,19 +79,38 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
         guard let detailViewController =
             storyboard.instantiateInitialViewController() as? ImagePreview else { return nil }
         
-        if let post = cellPost {
-            detailViewController.webSite = post.avatarURLString.replacingOccurrences(of: ",q60", with: "")
-        } else {
-            detailViewController.webSite = cellComment!.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+        let viewsTo3DTouch = [avatar, postImage]
+        
+        for (index, view) in viewsTo3DTouch.enumerated() where touchedView(view: view!, location: location) {
+            if view == avatar {
+                if let post = cellPost {
+                    detailViewController.webSite = post.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                } else {
+                    detailViewController.webSite = cellComment!.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                }
+                previewingContext.sourceRect = avatar.frame
+            } else {
+                if let post = cellPost {
+                    detailViewController.webSite = post.embed.url!
+                } else {
+                    detailViewController.webSite = cellComment!.embed.url!
+                }
+                previewingContext.sourceRect = postImage.frame
+            }
+            
+            detailViewController.preferredContentSize =
+                CGSize(width: 0.0, height: 600)
+            
+            
+            return detailViewController
         }
         
-        detailViewController.preferredContentSize =
-            CGSize(width: 0.0, height: 600)
-        
-        previewingContext.sourceRect = avatar.frame
-        
-        return detailViewController
-        
+        return nil
+    }
+    
+    private func touchedView(view: UIView, location: CGPoint) -> Bool {
+        let locationInView = view.convert(location, from: contentView)
+        return view.bounds.contains(locationInView)
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
@@ -101,6 +127,7 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
         
         
         postBody.attributedText = theAttributedString
+        postBody.textColor = .white
         upVotes.text = "+\(post.voteCount!)"
         authorName.text = post.author
         if leftInset != nil {
@@ -116,12 +143,19 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
             imageContainerHeight.constant = 200
             postImage.sd_setImage(with: URL(string: embed.preview)!)
         }
+        
+        let origImage = #imageLiteral(resourceName: "safari")
+        let tintedImage = origImage.withRenderingMode(.alwaysTemplate)
+        safariButtonWithImg.setImage(tintedImage, for: .normal)
+        safariButtonWithImg.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
+        
+        layoutIfNeeded()
     }
     
     func setupAvatar(url: URL, authorSex: Sex) {
         avatar.sd_setImage(with: url)
         
-        self.avatar.layer.cornerRadius = 25
+        self.avatar.layer.cornerRadius = 10
         self.avatar.layer.borderWidth = 2
         self.avatar.layer.borderColor = authorSex == .male ? UIColor.blue.cgColor : UIColor.pinkColor().cgColor
     }

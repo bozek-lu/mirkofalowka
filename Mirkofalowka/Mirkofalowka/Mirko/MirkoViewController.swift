@@ -19,6 +19,8 @@ class MirkoViewController: UITableViewController {
     let loginProvider = LoginProvider()
     
     override func viewDidLoad() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         tableView.register(UINib(nibName: String(describing: PostCell.self), bundle: nil), forCellReuseIdentifier: Identifier.postCell)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
@@ -71,7 +73,10 @@ class MirkoViewController: UITableViewController {
             registerForPreviewing(with: cell!, sourceView: cell!.contentView)
         }
         
-        cell!.setup(post: postsArr[indexPath.row], index: indexPath)
+        if postsArr.indices.contains(indexPath.row) {
+            cell!.setup(post: postsArr[indexPath.row], index: indexPath)
+        }
+        
         cell!.delegate = self
         return cell!
     }

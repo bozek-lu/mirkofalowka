@@ -20,23 +20,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3z-bW-goA">
-                        <rect key="frame" x="2" y="10" width="50" height="50"/>
+                        <rect key="frame" x="2" y="10" width="44" height="44"/>
                         <connections>
                             <action selector="openUserAvatar:" destination="uoZ-9g-Rf9" eventType="touchUpInside" id="HbT-f2-GTI"/>
                         </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-A9-CGJ">
-                        <rect key="frame" x="2" y="10" width="50" height="50"/>
+                        <rect key="frame" x="2" y="10" width="44" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="aZm-dj-4aA"/>
-                            <constraint firstAttribute="width" constant="50" id="q49-Bz-d6w"/>
+                            <constraint firstAttribute="height" constant="44" id="aZm-dj-4aA"/>
+                            <constraint firstAttribute="width" constant="44" id="q49-Bz-d6w"/>
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcL-sC-chN">
-                        <rect key="frame" x="57" y="26" width="310" height="242.5"/>
+                        <rect key="frame" x="51" y="26" width="316" height="242.5"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -51,7 +51,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="14"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.1843137255" green="0.61960784310000006" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.60390466450000002" blue="0.83697640900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="upVoteAction:" destination="uoZ-9g-Rf9" eventType="touchUpInside" id="zmx-bJ-SZ2"/>
@@ -60,7 +60,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="commentCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egz-aL-JnW">
                                 <rect key="frame" x="191.5" y="0.0" width="93.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.60390466451644897" blue="0.83697640895843506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -76,21 +76,17 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJv-gJ-Pom">
-                        <rect key="frame" x="0.0" y="254.5" width="40" height="44"/>
+                        <rect key="frame" x="0.0" y="258.5" width="40" height="40"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="safari_copyrighted_filled" translatesAutoresizingMaskIntoConstraints="NO" id="CcU-up-sIT">
-                                <rect key="frame" x="7" y="9.5" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="SGR-Jg-iR0"/>
-                                    <constraint firstAttribute="height" constant="25" id="ePk-iB-Rja"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcL-3l-Elv">
-                                <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcL-3l-Elv">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.1097869948" green="0.1098136529" blue="0.1097853258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="gNs-6j-jER"/>
                                 </constraints>
-                                <inset key="imageEdgeInsets" minX="5" minY="0.0" maxX="10" maxY="0.0"/>
+                                <color key="tintColor" red="0.0" green="0.60390466450000002" blue="0.83697640900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="highlighted" image="safari"/>
                                 <connections>
                                     <action selector="openSafari:" destination="uoZ-9g-Rf9" eventType="touchUpInside" id="m7f-mK-nCy"/>
                                 </connections>
@@ -101,26 +97,24 @@
                             <constraint firstAttribute="trailing" secondItem="AcL-3l-Elv" secondAttribute="trailing" id="AAY-kz-6A1"/>
                             <constraint firstAttribute="width" constant="40" id="BFP-D1-yui"/>
                             <constraint firstAttribute="bottom" secondItem="AcL-3l-Elv" secondAttribute="bottom" id="WdZ-M4-jhM"/>
-                            <constraint firstItem="CcU-up-sIT" firstAttribute="centerX" secondItem="gJv-gJ-Pom" secondAttribute="centerX" id="e5C-ks-TaX"/>
-                            <constraint firstItem="CcU-up-sIT" firstAttribute="centerY" secondItem="gJv-gJ-Pom" secondAttribute="centerY" id="fW9-uH-M2s"/>
                             <constraint firstItem="AcL-3l-Elv" firstAttribute="top" secondItem="gJv-gJ-Pom" secondAttribute="top" id="hak-IF-THw"/>
-                            <constraint firstAttribute="height" constant="44" id="nbw-ME-HIy"/>
+                            <constraint firstAttribute="height" constant="40" id="nbw-ME-HIy"/>
                             <constraint firstItem="AcL-3l-Elv" firstAttribute="leading" secondItem="gJv-gJ-Pom" secondAttribute="leading" id="sSJ-Hl-Shv"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUq-uc-dpg">
-                        <rect key="frame" x="60" y="8" width="39" height="18"/>
+                        <rect key="frame" x="54" y="8" width="36.5" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="rw6-Z5-p0O"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                        <color key="textColor" red="0.047058823529411764" green="0.66666666666666663" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                        <color key="textColor" red="0.035004516049959189" green="0.65383090101522845" blue="0.0057175907943332492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-F4-Hfa">
-                        <rect key="frame" x="326" y="8" width="39" height="17"/>
-                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                        <color key="textColor" red="0.1843137255" green="0.61960784310000006" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <rect key="frame" x="328.5" y="8" width="36.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                        <color key="textColor" red="0.0039215686274509803" green="0.60392156862745094" blue="0.83529411764705885" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kcl-Ag-0A5" userLabel="image">
@@ -129,8 +123,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="3wu-8N-EyH">
                                 <rect key="frame" x="147" y="-10" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Th-A2-JTL">
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Th-A2-JTL">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                <color key="backgroundColor" red="0.1097869948" green="0.1098136529" blue="0.1097853258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-wz-Swq">
                                 <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
@@ -155,7 +150,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="I3z-bW-goA" firstAttribute="top" secondItem="OsS-A9-CGJ" secondAttribute="top" id="3zQ-IT-Qr1"/>
                     <constraint firstAttribute="trailingMargin" secondItem="UcL-sC-chN" secondAttribute="trailing" id="D01-ae-38y"/>
@@ -175,14 +170,14 @@
                     <constraint firstItem="OsS-A9-CGJ" firstAttribute="top" secondItem="JHc-Si-68k" secondAttribute="topMargin" constant="2" id="iHi-g3-65L"/>
                     <constraint firstAttribute="trailingMargin" secondItem="kcl-Ag-0A5" secondAttribute="trailing" id="irY-nC-WLy"/>
                     <constraint firstItem="lsC-rh-iKy" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leading" id="jUa-Ie-vWZ"/>
-                    <constraint firstItem="gJv-gJ-Pom" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OsS-A9-CGJ" secondAttribute="bottom" id="loH-b7-7gY"/>
+                    <constraint firstItem="gJv-gJ-Pom" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OsS-A9-CGJ" secondAttribute="bottom" constant="8" id="loH-b7-7gY"/>
                     <constraint firstItem="UcL-sC-chN" firstAttribute="top" secondItem="JUq-uc-dpg" secondAttribute="bottom" id="o19-oe-E5i"/>
                     <constraint firstItem="OsS-A9-CGJ" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leading" constant="2" id="oig-fS-dz6"/>
                     <constraint firstItem="kcl-Ag-0A5" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leadingMargin" constant="45" id="oxU-25-B0N"/>
                     <constraint firstItem="JUq-uc-dpg" firstAttribute="top" secondItem="JHc-Si-68k" secondAttribute="topMargin" id="thw-a7-QW7"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="authorName" destination="JUq-uc-dpg" id="qUc-TR-5bu"/>
                 <outlet property="avatar" destination="OsS-A9-CGJ" id="JD2-WG-m2B"/>
@@ -192,12 +187,13 @@
                 <outlet property="postBody" destination="UcL-sC-chN" id="sdv-vR-wYd"/>
                 <outlet property="postImage" destination="5Th-A2-JTL" id="ojt-RX-6iT"/>
                 <outlet property="safariButton" destination="gJv-gJ-Pom" id="NLA-kQ-Goi"/>
+                <outlet property="safariButtonWithImg" destination="AcL-3l-Elv" id="8a9-Yv-BjJ"/>
                 <outlet property="upVotes" destination="bnu-F4-Hfa" id="koi-wx-WFY"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="143.5"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="safari_copyrighted_filled" width="100" height="100"/>
+        <image name="safari" width="1600" height="1600"/>
     </resources>
 </document>

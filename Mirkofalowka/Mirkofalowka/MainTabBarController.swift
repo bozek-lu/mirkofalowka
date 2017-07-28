@@ -14,8 +14,8 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
-        
-        self.tabBar.tintColor = UIColor(red: 0x0C, green: 0xAA, blue: 0x69)
+//        019AD5
+        self.tabBar.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
         
         NotificationCenter.default.addObserver(self, selector:  #selector(self.askForLogin), name: Notification.Name("youNeedLoginNotif"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBadge), name: NSNotification.Name(rawValue: Const.updateBadgeNotif), object: nil)

@@ -13,16 +13,17 @@
         <scene sceneID="e97-At-Tvz">
             <objects>
                 <tableViewController id="9rM-Sv-bD5" customClass="MirkoViewController" customModule="Mirkofalowka" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XIL-lU-fjf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XIL-lU-fjf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1097869948" green="0.1098136529" blue="0.1097853258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1097869947552681" green="0.10981365293264389" blue="0.10978532582521439" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="9rM-Sv-bD5" id="Rkq-vB-qpy"/>
                             <outlet property="delegate" destination="9rM-Sv-bD5" id="wKr-KN-6aK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Mirko" id="7pX-Sw-ztM">
+                    <navigationItem key="navigationItem" title="Mirko" largeTitleDisplayMode="always" id="7pX-Sw-ztM">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iil-QE-fnw">
                             <connections>
                                 <action selector="composePost:" destination="9rM-Sv-bD5" id="iDd-rb-lb4"/>
@@ -60,9 +61,12 @@
                     <tabBarItem key="tabBarItem" title="Mirko" image="biohazard" id="dRd-ga-Ric"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Acr-3K-QWy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="Acr-3K-QWy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
