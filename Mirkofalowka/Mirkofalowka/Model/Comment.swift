@@ -50,7 +50,7 @@ class Comment: Mappable {
         id <- map["id"]
         date <- map["date"]
         voteCount <- map["vote_count"]
-        avatarURLString <- map["author_avatar_lo"]
+        avatarURLString <- map["author_avatar"]
         embed <- map["embed"]
         
         var authSex: String!

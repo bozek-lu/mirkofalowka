@@ -58,11 +58,19 @@ extension PostController {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as! PostCell
             cell.setup(post: post!, index: indexPath)
+            if traitCollection.forceTouchCapability == .available {
+                registerForPreviewing(with: cell, sourceView: cell.contentView)
+            }
             cell.delegate = self
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Identifier.postCell) as! PostCell
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: cell, sourceView: cell.contentView)
+        }
+        
         cell.setup(post: postComments[indexPath.row - 1], index: indexPath)
         cell.delegate = self
         return cell

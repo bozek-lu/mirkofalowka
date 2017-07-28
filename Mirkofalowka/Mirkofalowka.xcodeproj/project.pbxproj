@@ -21,6 +21,8 @@
 		8948F8CA1ED86418003A3FD2 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8C91ED86418003A3FD2 /* MediaModel.swift */; };
 		8948F8CF1ED86D01003A3FD2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8CE1ED86D01003A3FD2 /* SettingsViewController.swift */; };
 		8948F8D11ED86D81003A3FD2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8D01ED86D81003A3FD2 /* NotificationsViewController.swift */; };
+		89B472581F2BAE10002873C0 /* ImagePreview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B472571F2BAE10002873C0 /* ImagePreview.storyboard */; };
+		89B4725B1F2BAE2E002873C0 /* ImagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B4725A1F2BAE2E002873C0 /* ImagePreview.swift */; };
 		89CA2EB11D6B9ABD0088BE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */; };
 		89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB61D6B9ABD0088BE95 /* Main.storyboard */; };
 		89CA2EBA1D6B9ABD0088BE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CA2EB91D6B9ABD0088BE95 /* Assets.xcassets */; };
@@ -75,6 +77,8 @@
 		8948F8C91ED86418003A3FD2 /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		8948F8CE1ED86D01003A3FD2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8948F8D01ED86D81003A3FD2 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		89B472571F2BAE10002873C0 /* ImagePreview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePreview.storyboard; sourceTree = "<group>"; };
+		89B4725A1F2BAE2E002873C0 /* ImagePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreview.swift; sourceTree = "<group>"; };
 		89CA2EAD1D6B9ABD0088BE95 /* Mirkofalowka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mirkofalowka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CA2EB01D6B9ABD0088BE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CA2EB71D6B9ABD0088BE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		8948F8C81ED861B0003A3FD2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				89B472591F2BAE1A002873C0 /* ImagePreview */,
 				8948F8CB1ED86BA4003A3FD2 /* main controller */,
 				89CA2EEE1D6BA45E0088BE95 /* Notifications */,
 				89CA2EED1D6BA4530088BE95 /* Settings */,
@@ -196,6 +201,15 @@
 				89F1CE621E3934DF005E5448 /* MainTabBarController.swift */,
 			);
 			name = "main controller";
+			sourceTree = "<group>";
+		};
+		89B472591F2BAE1A002873C0 /* ImagePreview */ = {
+			isa = PBXGroup;
+			children = (
+				89B472571F2BAE10002873C0 /* ImagePreview.storyboard */,
+				89B4725A1F2BAE2E002873C0 /* ImagePreview.swift */,
+			);
+			name = ImagePreview;
 			sourceTree = "<group>";
 		};
 		89CA2EA41D6B9ABD0088BE95 = {
@@ -424,6 +438,7 @@
 				89CA2EBA1D6B9ABD0088BE95 /* Assets.xcassets in Resources */,
 				89CA2EE61D6BA35F0088BE95 /* Hot.storyboard in Resources */,
 				89CDE21B1D9D8D8C0002C0A7 /* MirkoPost.storyboard in Resources */,
+				89B472581F2BAE10002873C0 /* ImagePreview.storyboard in Resources */,
 				89CA2EE91D6BA3F70088BE95 /* Notifications.storyboard in Resources */,
 				89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */,
 				89F1CE611E3927BF005E5448 /* PostCell.xib in Resources */,
@@ -515,6 +530,7 @@
 				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
 				89F1CE631E3934DF005E5448 /* MainTabBarController.swift in Sources */,
 				892FA4D31D6F45F30079439A /* LoginProvider.swift in Sources */,
+				89B4725B1F2BAE2E002873C0 /* ImagePreview.swift in Sources */,
 				89CDE21F1D9D8E7F0002C0A7 /* PostProvider.swift in Sources */,
 				8948F8D11ED86D81003A3FD2 /* NotificationsViewController.swift in Sources */,
 				892B49CC1D788EFD00268B0C /* PostCell.swift in Sources */,
@@ -732,9 +748,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.wczoraj.Mirkofalowka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

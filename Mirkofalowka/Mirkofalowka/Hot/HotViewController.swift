@@ -46,22 +46,20 @@ class HotViewController: UIViewController {
         let alert = UIAlertController(title: "Gorące z:", message: nil, preferredStyle: .actionSheet)
         
         alert.addAction(UIAlertAction(title: "6h", style: .default , handler: { UIAlertAction in
-            Session.shared.period = 6
+            UserDefaults.standard.set("6", key: "hotPeriod")
             self.hotPeriod.title = "6h"
             self.loadAgain()
         }))
         
         alert.addAction(UIAlertAction(title: "12h", style: .default , handler: { UIAlertAction in
-            print("User click Approve button")
-            Session.shared.period = 12
+            UserDefaults.standard.set("12", key: "hotPeriod")
             
             self.hotPeriod.title = "12h"
             self.loadAgain()
         }))
         
         alert.addAction(UIAlertAction(title: "24h", style: .default , handler: { UIAlertAction in
-            print("User click Approve button")
-            Session.shared.period = 24
+            UserDefaults.standard.set("24", key: "hotPeriod")
             
             self.hotPeriod.title = "24h"
             self.loadAgain()
@@ -105,6 +103,10 @@ extension HotViewController: UITableViewDelegate, UITableViewDataSource {
         
         if indexPath.row == postsArr.count - 1 {
             getPosts(page: Int(postsArr.count / 25) + 1)
+        }
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: cell!, sourceView: cell!.contentView)
         }
         
         cell!.setup(post: postsArr[indexPath.row], index: indexPath)

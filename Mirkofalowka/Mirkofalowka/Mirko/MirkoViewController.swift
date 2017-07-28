@@ -67,6 +67,10 @@ class MirkoViewController: UITableViewController {
             getPosts(page: Int(postsArr.count / 25) + 1)
         }
         
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: cell!, sourceView: cell!.contentView)
+        }
+        
         cell!.setup(post: postsArr[indexPath.row], index: indexPath)
         cell!.delegate = self
         return cell!

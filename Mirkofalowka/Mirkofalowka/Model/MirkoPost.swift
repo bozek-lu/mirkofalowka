@@ -68,7 +68,7 @@ class MirkoPost: Mappable {
         id <- map["id"]
         date <- map["date"]
         voteCount <- map["vote_count"]
-        avatarURLString <- map["author_avatar_lo"]
+        avatarURLString <- map["author_avatar"]
         postURL <- map["url"]
         commCount <- map["comment_count"]
         comments <- map["comments"]

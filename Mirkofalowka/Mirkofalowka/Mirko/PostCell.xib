@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,20 +20,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3z-bW-goA">
-                        <rect key="frame" x="8" y="10" width="40" height="40"/>
+                        <rect key="frame" x="2" y="10" width="50" height="50"/>
                         <connections>
                             <action selector="openUserAvatar:" destination="uoZ-9g-Rf9" eventType="touchUpInside" id="HbT-f2-GTI"/>
                         </connections>
                     </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OsS-A9-CGJ">
-                        <rect key="frame" x="8" y="10" width="40" height="40"/>
+                        <rect key="frame" x="2" y="10" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="aZm-dj-4aA"/>
-                            <constraint firstAttribute="width" constant="40" id="q49-Bz-d6w"/>
+                            <constraint firstAttribute="height" constant="50" id="aZm-dj-4aA"/>
+                            <constraint firstAttribute="width" constant="50" id="q49-Bz-d6w"/>
                         </constraints>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcL-sC-chN">
-                        <rect key="frame" x="53" y="26" width="314" height="242.5"/>
+                        <rect key="frame" x="57" y="26" width="310" height="242.5"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -109,7 +109,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUq-uc-dpg">
-                        <rect key="frame" x="56" y="8" width="39" height="18"/>
+                        <rect key="frame" x="60" y="8" width="39" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="rw6-Z5-p0O"/>
                         </constraints>
@@ -177,8 +177,8 @@
                     <constraint firstItem="lsC-rh-iKy" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leading" id="jUa-Ie-vWZ"/>
                     <constraint firstItem="gJv-gJ-Pom" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OsS-A9-CGJ" secondAttribute="bottom" id="loH-b7-7gY"/>
                     <constraint firstItem="UcL-sC-chN" firstAttribute="top" secondItem="JUq-uc-dpg" secondAttribute="bottom" id="o19-oe-E5i"/>
+                    <constraint firstItem="OsS-A9-CGJ" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leading" constant="2" id="oig-fS-dz6"/>
                     <constraint firstItem="kcl-Ag-0A5" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leadingMargin" constant="45" id="oxU-25-B0N"/>
-                    <constraint firstItem="OsS-A9-CGJ" firstAttribute="leading" secondItem="JHc-Si-68k" secondAttribute="leadingMargin" id="qHp-69-UGd"/>
                     <constraint firstItem="JUq-uc-dpg" firstAttribute="top" secondItem="JHc-Si-68k" secondAttribute="topMargin" id="thw-a7-QW7"/>
                 </constraints>
             </tableViewCellContentView>
@@ -188,7 +188,7 @@
                 <outlet property="avatar" destination="OsS-A9-CGJ" id="JD2-WG-m2B"/>
                 <outlet property="commentCount" destination="Egz-aL-JnW" id="IvC-Ua-EmB"/>
                 <outlet property="imageContainerHeight" destination="hgZ-4Y-NmB" id="1UI-Fo-ySj"/>
-                <outlet property="leftInset" destination="qHp-69-UGd" id="l4e-HZ-PT9"/>
+                <outlet property="leftInset" destination="oig-fS-dz6" id="iRR-mZ-ChQ"/>
                 <outlet property="postBody" destination="UcL-sC-chN" id="sdv-vR-wYd"/>
                 <outlet property="postImage" destination="5Th-A2-JTL" id="ojt-RX-6iT"/>
                 <outlet property="safariButton" destination="gJv-gJ-Pom" id="NLA-kQ-Goi"/>
