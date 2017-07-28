@@ -10,9 +10,21 @@ import UIKit
 
 
 class SettingsViewController: UIViewController {
+    let loginProvider = LoginProvider()
     
     @IBAction func logowanie(_ sender: Any) {
-        NotificationCenter.default.post(name: Notification.Name("youNeedLoginNotif"), object: nil)
+        login()
+        
     }
     
+    func login() {
+        loginProvider.login() { success in
+            if success {
+                print("wow")
+            } else {
+                NotificationCenter.default.post(name: Notification.Name("youNeedLoginNotif"), object: nil)
+            }
+        }
+        
+    }
 }

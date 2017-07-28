@@ -11,11 +11,13 @@ import Foundation
 class Session {
     static let shared = Session()
     
-    private(set) var userToken: String?
+    var userToken: String? {
+        return UserDefaults.standard.string(forKey: "userToken")
+    }
     
     var period = 6
     
     func setUserToken(tok: String) {
-        self.userToken = tok
+        UserDefaults.standard.set(tok, forKey: "userToken")
     }
 }

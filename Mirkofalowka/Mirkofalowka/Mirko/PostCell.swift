@@ -14,7 +14,7 @@ protocol PostCellDelegate {
     func openSafari(with link: URL)
 }
 
-class PostCell: UITableViewCell {
+class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
     
     var delegate: PostCellDelegate?
     
@@ -59,7 +59,22 @@ class PostCell: UITableViewCell {
             postImage.sd_setImage(with: URL(string: embed.preview)!)
         }
         
+        if traitCollection.forceTouchCapability == .available {
+            
+            registerForPreviewingWithDelegate(self, sourceView: avatar)
+            
+        }
+        
         layoutIfNeeded()
+    }
+    
+    
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = collectionView?.indexPathForItemAtPoint(location) else { return nil }
+        
+        guard let cell = collectionView?.cellForItemAtIndexPath(indexPath) else { return nil }
+        
     }
     
     func setup(post: Comment, index: IndexPath) {
@@ -92,6 +107,9 @@ class PostCell: UITableViewCell {
         self.avatar.layer.cornerRadius = 20
         self.avatar.layer.borderWidth = 2
         self.avatar.layer.borderColor = authorSex == .male ? UIColor.blue.cgColor : UIColor.pinkColor().cgColor
+    }
+    @IBAction func openUserAvatar(_ sender: Any) {
+        
     }
     
     @IBAction func openSafari(_ sender: Any) {

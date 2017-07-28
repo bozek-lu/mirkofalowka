@@ -27,10 +27,10 @@ class MirkoViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        loginManager.connect()
-        
-//        getPosts()
-        
+    }
+    
+    @IBAction func composePost(_ sender: Any) {
+        self.contentProvider.dummyPost()
     }
     
     @IBAction func refresh(_ sender: Any) {

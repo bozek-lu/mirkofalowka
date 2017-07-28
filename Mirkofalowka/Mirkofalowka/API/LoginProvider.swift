@@ -19,8 +19,6 @@ struct Wykop {
 typealias MirkoResponse = ([MirkoPost]) -> Void
 typealias LoginResponse = (Bool) -> Void
 
-var userkey: String?
-
 let baseAPI = "http://a.wykop.pl/"
 
 class LoginProvider {
@@ -32,7 +30,7 @@ class LoginProvider {
         
         Alamofire.request(address)
         .response { (defaultResponse) in
-            print(defaultResponse.response)
+            print(defaultResponse.response ?? "")
         }
 //        .response { (req, response, data, error) in
 //            print(response)
@@ -46,22 +44,31 @@ class LoginProvider {
         
         let address = baseAPI + "user/login/appkey," + Wykop.key
         
-        let parameters =  ["accountkey" : Session.shared.userToken]
+        guard let token = Session.shared.userToken else {
+            completion(false)
+            return
+        }
+        
+        let parameters =  ["accountkey": token, "login": "wczoraj"]
         
 //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
-        let sign = Wykop.secret + address + "," + Session.shared.userToken!
+        let sign = Wykop.secret + address + token + ",wczoraj"
+        print(sign)
         print(sign.md5())
-        let headers = ["apisign" : sign.md5()]
-        
+        let headers = ["apisign" : sign.md5(), "Content-Type":"application/x-www-form-urlencoded"]
         
         Alamofire.request(address, parameters: parameters, headers: headers)
             .responseJSON { response in
                 
                 print(response)
+                if  let json = response.result.value as? [String: Any], json["error"] != nil {
+                    completion(false)
+                    return
+                }
                 
                 completion(true)
                 
-//                userkey = response.result.value. //valueForKey("userkey") as? String
+//                userkey = response.result//.valueForKey("userkey") as? String
         }
     }
     

@@ -11,11 +11,13 @@ import Alamofire
 
 class ContentProvider {
     
-    
-    
     func dummyPost() {
-        let address = baseAPI + "entries/add/userkey," + userkey! + ",appkey," + Wykop.key // userkey!
+        guard let token = Session.shared.userToken else {
+//            completion(false)
+            return
+        }
         
+        let address = baseAPI + "entries/add/userkey," + token + ",appkey," + Wykop.key // userkey!
         
         let text = "dummy entry"
         
@@ -23,7 +25,7 @@ class ContentProvider {
         
         //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
         let sign = Wykop.secret + address + text
-        let headers = ["apisign" : sign.md5()]
+        let headers = ["apisign" : sign.md5(), "Content-Type":"application/x-www-form-urlencoded"]
         
         Alamofire.request(address, parameters: parameters, headers: headers)
             .responseJSON { response in

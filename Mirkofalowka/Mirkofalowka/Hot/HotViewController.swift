@@ -38,7 +38,7 @@ class HotViewController: UIViewController {
             self.indicator.isHidden = true
             self.postsArr.append(contentsOf: posts)
             self.tableView.reloadData()
-            //            self.loginManager.dummyPost()
+            
         }
     }
     
