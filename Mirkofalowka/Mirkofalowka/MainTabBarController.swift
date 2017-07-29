@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
     
@@ -19,6 +20,7 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
         
         NotificationCenter.default.addObserver(self, selector:  #selector(self.askForLogin), name: Notification.Name("youNeedLoginNotif"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateBadge), name: NSNotification.Name(rawValue: Const.updateBadgeNotif), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.openView), name: NSNotification.Name(rawValue: "openView"), object: nil)
     }
     
     func tabBarController(_ tabBarController: UITabBarController,
@@ -28,6 +30,26 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate {
 //        if let vc = viewController as? UINavigationController {
 //            vc.popViewController(animated: false);
 //        }
+    }
+    
+    func openView(notification: NSNotification) {
+        let info = notification.userInfo as! Dictionary<String,AnyObject>
+        
+        let webSite = info["webSite"] as? String
+        let view = info["view"] as? String
+        let user = info["user"] as? String
+        
+        if view == "safari" {
+            let safariVC = SFSafariViewController(url: URL(string: webSite!)!)
+            self.present(safariVC, animated: true, completion: nil)
+        } else {
+            //profil view controller
+            let strb = UIStoryboard(name: "UserProfile", bundle: nil)
+            let cntrl = strb.instantiateInitialViewController() as! UserProfile
+            cntrl.user = user!
+            
+            self.present(cntrl, animated: true, completion: nil)
+        }
     }
     
     func updateBadge(notification: NSNotification) {

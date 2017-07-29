@@ -17,8 +17,9 @@ class ImagePreview: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: UIWebView!
     
-    var ppekType = PeekType.embed
+    var peekType = PeekType.embed
     var webSite = ""
+    var user = ""
     
     override func viewDidLoad() {
         webView.loadRequest(URLRequest(url: URL(string: webSite)!))
@@ -28,17 +29,22 @@ class ImagePreview: UIViewController, UIWebViewDelegate {
     
     override var previewActionItems: [UIPreviewActionItem] {
         let openProfile = UIPreviewAction(title: "Otwórz profil", style: .default) { (action, viewController) -> Void in
-            print("You liked the photo")
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openView"), object: nil, userInfo: ["view": "profile", "user": self.user])
         }
         
-        let openImage = UIPreviewAction(title: "Pokaż zdjęcie", style: .default) { (action, viewController) -> Void in
-            print("You deleted the photo")
+        let openImage = UIPreviewAction(title: "Pokaż media", style: .default) { (action, viewController) -> Void in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openView"), object: nil, userInfo: ["view": "safari", "webSite": self.webSite])
         }
         
         let nothing = UIPreviewAction(title: "Anuluj", style: .default) { (action, viewController) -> Void in
         }
         
-        return [openProfile, openImage, nothing]
+        switch peekType {
+        case .embed:
+            return [openImage, nothing]
+        case .avatar:
+            return [openProfile, nothing]
+        }
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {

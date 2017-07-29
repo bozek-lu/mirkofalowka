@@ -42,7 +42,7 @@ class LoginProvider {
     
     func login(completion: @escaping LoginResponse) {
         
-        let address = baseAPI + "user/login/appkey," + Wykop.key
+        let address = baseAPI + "user/login/appkey/" + Wykop.key
         
         guard let token = Session.shared.userToken else {
             completion(false)
@@ -55,20 +55,20 @@ class LoginProvider {
         let sign = Wykop.secret + address + token + ",wczoraj"
         print(sign)
         print(sign.md5())
-        let headers = ["apisign" : sign.md5(), "Content-Type":"application/x-www-form-urlencoded"]
+        let headers = ["apisign" : sign.md5()]
         
-        Alamofire.request(address, parameters: parameters, headers: headers)
+        Alamofire.request(address, method: .post, parameters: parameters, headers: headers)
             .responseJSON { response in
                 
                 print(response)
-                if  let json = response.result.value as? [String: Any], json["error"] != nil {
+                guard let json = response.result.value as? [String: Any], json["error"] == nil else {
                     completion(false)
                     return
                 }
                 
                 completion(true)
                 
-//                userkey = response.result//.valueForKey("userkey") as? String
+                Session.shared.currentUserKey = json["userkey"] as! String
         }
     }
     

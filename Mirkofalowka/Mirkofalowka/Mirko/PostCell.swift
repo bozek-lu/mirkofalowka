@@ -153,16 +153,22 @@ extension PostCell: UIViewControllerPreviewingDelegate {
             if view == avatar {
                 if let post = cellPost {
                     detailViewController.webSite = post.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                    detailViewController.user = post.author
                 } else {
                     detailViewController.webSite = cellComment!.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                    detailViewController.user = cellComment!.author
                 }
+                detailViewController.peekType = .avatar
                 previewingContext.sourceRect = avatar.frame
             } else {
                 if let post = cellPost {
                     detailViewController.webSite = post.embed.url!
+                    detailViewController.user = post.author
                 } else {
                     detailViewController.webSite = cellComment!.embed.url!
+                    detailViewController.user = cellComment!.author
                 }
+                detailViewController.peekType = .embed
                 previewingContext.sourceRect = postImage.frame
             }
             

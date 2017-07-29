@@ -17,7 +17,7 @@ class ContentProvider {
             return
         }
         
-        let address = baseAPI + "entries/add/userkey," + token + ",appkey," + Wykop.key // userkey!
+        let address = baseAPI + "entries/add/appkey/" + Wykop.key + "/userkey/" + Session.shared.currentUserKey + "/"
         
         let text = "dummy entry"
         
@@ -25,14 +25,33 @@ class ContentProvider {
         
         //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
         let sign = Wykop.secret + address + text
-        let headers = ["apisign" : sign.md5(), "Content-Type":"application/x-www-form-urlencoded"]
+        let headers = ["apisign" : sign.md5()]
         
-        Alamofire.request(address, parameters: parameters, headers: headers)
+        Alamofire.request(address, method: .post, parameters: parameters, headers: headers)
+            .responseJSON { response in
+                print(response)
+                
+                if let json = response.result.value as? [String: Any], json["error"] != nil {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil, userInfo: nil)
+                }
+                
+        }
+    }
+    
+    func getUser(name: String, completion: () -> Void) {
+        let address = baseAPI + "profile/index/" + name + "/appkey," + Wykop.key
+        let sign = Wykop.secret + address
+        let headers = ["apisign" : sign.md5()]
+        
+        Alamofire.request(address, headers: headers)
             .responseJSON { response in
                 
                 print(response)
                 
-        }
+                if  let json = response.result.value as? [String: Any] {
+                    let user = UserDetails(JSON: json)
+                }
+            }
     }
     
     

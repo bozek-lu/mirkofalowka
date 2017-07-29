@@ -24,7 +24,7 @@
                                     <outlet property="delegate" destination="W6n-Fi-Xu9" id="fb2-Wo-HqU"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fb3-MT-kw0">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fb3-MT-kw0">
                                 <rect key="frame" x="168.5" y="324.5" width="37" height="37"/>
                                 <color key="color" red="0.1097869948" green="0.1098136529" blue="0.1097853258" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>

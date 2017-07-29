@@ -22,4 +22,6 @@ class Session {
     func setUserToken(tok: String) {
         UserDefaults.standard.set(tok, forKey: "userToken")
     }
+    
+    var currentUserKey = ""
 }
