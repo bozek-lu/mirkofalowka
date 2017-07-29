@@ -9,5 +9,9 @@
 import UIKit
 
 class NotificationViewController: UIViewController {
+    let contentProvider = ContentProvider()
     
+    override func viewDidLoad() {
+        contentProvider.getNotifications(page: "1")
+    }
 }

@@ -44,15 +44,10 @@ class LoginProvider {
         
         let address = baseAPI + "user/login/appkey/" + Wykop.key
         
-        guard let token = Session.shared.userToken else {
-            completion(false)
-            return
-        }
-        
-        let parameters =  ["accountkey": token, "login": "wczoraj"]
+        let parameters =  ["accountkey": Session.shared.userToken, "login": "wczoraj"]
         
 //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
-        let sign = Wykop.secret + address + token + ",wczoraj"
+        let sign = Wykop.secret + address + Session.shared.userToken + ",wczoraj"
         print(sign)
         print(sign.md5())
         let headers = ["apisign" : sign.md5()]
@@ -68,7 +63,7 @@ class LoginProvider {
                 
                 completion(true)
                 
-                Session.shared.currentUserKey = json["userkey"] as! String
+                UserDefaults.standard.set(json["userkey"] as! String, forKey: "currentUserToken")
         }
     }
     

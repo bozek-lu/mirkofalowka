@@ -11,8 +11,11 @@ import Foundation
 class Session {
     static let shared = Session()
     
-    var userToken: String? {
-        return UserDefaults.standard.string(forKey: "userToken")
+    var userToken: String {
+        guard let key = UserDefaults.standard.string(forKey: "userToken") else {
+            return ""
+        }
+        return key
     }
     
     var period: String {
@@ -23,5 +26,10 @@ class Session {
         UserDefaults.standard.set(tok, forKey: "userToken")
     }
     
-    var currentUserKey = ""
+    var currentUserKey: String {
+        guard let key = UserDefaults.standard.string(forKey: "currentUserToken") else {
+            return ""
+        }
+        return key
+    }
 }

@@ -12,10 +12,6 @@ import Alamofire
 class ContentProvider {
     
     func dummyPost() {
-        guard let token = Session.shared.userToken else {
-//            completion(false)
-            return
-        }
         
         let address = baseAPI + "entries/add/appkey/" + Wykop.key + "/userkey/" + Session.shared.currentUserKey + "/"
         
@@ -31,11 +27,47 @@ class ContentProvider {
             .responseJSON { response in
                 print(response)
                 
-                if let json = response.result.value as? [String: Any], json["error"] != nil {
+                if let json = response.result.value as? [String: Any], let err = json["error"] as? [String: Any] {
+                    if let code = err["code"] as? Int, code == 11 {
+                        //refresh user key
+                    }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil, userInfo: nil)
                 }
                 
         }
+    }
+    
+    func getNotifications(page: String, completion: @escaping ([Notification]) -> Void) {
+//        Parametry API    userkey – klucz użytkownika
+//        appkey – klucz aplikacji
+//        page - strona
+        let address = baseAPI + "mywykop/HashTagsNotifications/appkey/" + Wykop.key + "/userkey/" + Session.shared.currentUserKey + "/" + "page," + page
+        
+        //        md5(SEKRET + URL + WARTOŚCI_PARAMETRÓW_POST)
+        let sign = Wykop.secret + address
+        let headers = ["apisign" : sign.md5()]
+        
+        Alamofire.request(address, headers: headers)
+            .responseJSON { response in
+//                print(response)
+                
+                if let json = response.result.value as? [String: Any], let err = json["error"] as? [String: Any] {
+                    if let code = err["code"] as? Int, code == 11 {
+                        //refresh user key
+                    }
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil, userInfo: nil)
+                }
+                
+        }
+            .responseArray { (response: DataResponse<[Notification]>) in
+                guard let arr = response.result.value else {
+                    completion([])
+                    return
+                }
+                
+                completion(arr)
+        }
+        
     }
     
     func getUser(name: String, completion: () -> Void) {
