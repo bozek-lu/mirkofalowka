@@ -70,7 +70,7 @@ class ContentProvider {
         
     }
     
-    func getUser(name: String, completion: () -> Void) {
+    func getUser(name: String, completion: ([String: Any]) -> Void) {
         let address = baseAPI + "profile/index/" + name + "/appkey," + Wykop.key
         let sign = Wykop.secret + address
         let headers = ["apisign" : sign.md5()]
@@ -81,6 +81,7 @@ class ContentProvider {
                 print(response)
                 
                 if  let json = response.result.value as? [String: Any] {
+                    completion(json)
                     let user = UserDetails(JSON: json)
                 }
             }
