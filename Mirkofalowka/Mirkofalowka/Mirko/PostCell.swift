@@ -112,7 +112,7 @@ class PostCell: UITableViewCell {
         let date = dateFormatter.date(from: string)!
         
         let formatter = TTTTimeIntervalFormatter()
-        let str = formatter.string(forTimeInterval: Date().timeIntervalSince(date))
+        let str = formatter.string(forTimeInterval: -Date().timeIntervalSince(date))
         
         timeLabel.text = str
     }
