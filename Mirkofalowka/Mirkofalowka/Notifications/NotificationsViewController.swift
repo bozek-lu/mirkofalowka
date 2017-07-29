@@ -12,6 +12,8 @@ class NotificationViewController: UIViewController {
     let contentProvider = ContentProvider()
     
     override func viewDidLoad() {
-        contentProvider.getNotifications(page: "1")
+        contentProvider.getNotifications(page: "1") { _ in
+            
+        }
     }
 }

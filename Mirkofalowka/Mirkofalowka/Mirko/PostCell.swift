@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import FormatterKit
 
 protocol PostCellDelegate {
     func upvoteAction(on index: IndexPath)
@@ -28,6 +29,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var safariButtonWithImg: UIButton!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var imageContainerHeight: NSLayoutConstraint!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var imageURL: URL?
     
@@ -63,10 +65,9 @@ class PostCell: UITableViewCell {
             postImage.sd_setImage(with: URL(string: embed.preview)!)
         }
         
-        let origImage = #imageLiteral(resourceName: "safari")
-        let tintedImage = origImage.withRenderingMode(.alwaysTemplate)
-        safariButtonWithImg.setImage(tintedImage, for: .normal)
-        safariButtonWithImg.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
+        setupSafariButton()
+        
+        setupTimeLabel(string: post.date)
         
         layoutIfNeeded()
     }
@@ -98,12 +99,22 @@ class PostCell: UITableViewCell {
             postImage.sd_setImage(with: URL(string: embed.preview)!)
         }
         
-        let origImage = #imageLiteral(resourceName: "safari")
-        let tintedImage = origImage.withRenderingMode(.alwaysTemplate)
-        safariButtonWithImg.setImage(tintedImage, for: .normal)
-        safariButtonWithImg.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
+        setupSafariButton()
+        
+        setupTimeLabel(string: post.date)
         
         layoutIfNeeded()
+    }
+    
+    func setupTimeLabel(string: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyy-MM-dd HH:mm:ss"//2016-09-29 20:04:24
+        let date = dateFormatter.date(from: string)!
+        
+        let formatter = TTTTimeIntervalFormatter()
+        let str = formatter.string(forTimeInterval: Date().timeIntervalSince(date))
+        
+        timeLabel.text = str
     }
     
     func setupAvatar(url: URL, authorSex: Sex) {
@@ -112,6 +123,13 @@ class PostCell: UITableViewCell {
         self.avatar.layer.cornerRadius = 10
         self.avatar.layer.borderWidth = 2
         self.avatar.layer.borderColor = authorSex == .male ? UIColor.blue.cgColor : UIColor.pinkColor().cgColor
+    }
+    
+    func setupSafariButton() {
+        let origImage = #imageLiteral(resourceName: "safari")
+        let tintedImage = origImage.withRenderingMode(.alwaysTemplate)
+        safariButtonWithImg.setImage(tintedImage, for: .normal)
+        safariButtonWithImg.tintColor = UIColor(red: 0x01, green: 0x9A, blue: 0xD5)
     }
     
     @IBAction func openUserAvatar(_ sender: Any) {

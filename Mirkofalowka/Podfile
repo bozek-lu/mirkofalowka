@@ -9,6 +9,7 @@ pod 'CryptoSwift', :git => "https://github.com/krzyzanowskim/CryptoSwift", :bran
 pod 'ObjectMapper'
 pod 'AlamofireObjectMapper'
 pod 'SDWebImage'
+pod 'FormatterKit'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|

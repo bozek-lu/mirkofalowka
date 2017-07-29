@@ -22,7 +22,7 @@ class SettingsViewController: UIViewController {
             if success {
                 print("wow")
             } else {
-                NotificationCenter.default.post(name: Notification.Name("youNeedLoginNotif"), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil)
             }
         }
         
