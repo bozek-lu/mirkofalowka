@@ -14,6 +14,8 @@ import LFTwitterProfile
 class UserProfile: TwitterProfileViewController {
     let contentProvider = ContentProvider()
     
+    var user = ""
+    
     var tweetTableView: UITableView!
     var photosTableView: UITableView!
     var favoritesTableView: UITableView!
@@ -49,8 +51,8 @@ class UserProfile: TwitterProfileViewController {
         super.viewDidLoad()
         
         contentProvider.getUser(name: user) { userDict in
-            self.name = userDict["login"]
-            self.locationString = userDict["city"]
+            self.username = userDict["login"] as? String
+            self.locationString = userDict["city"] as? String
         }
         
         self.profileImage = UIImage.init(named: "icon.png")
@@ -73,7 +75,7 @@ class UserProfile: TwitterProfileViewController {
 
 
 // MARK: UITableViewDelegates & DataSources
-extension SampleViewController: UITableViewDelegate, UITableViewDataSource {
+extension UserProfile: UITableViewDelegate, UITableViewDataSource {
     
     fileprivate func setupTables() {
         self.tweetTableView.delegate = self

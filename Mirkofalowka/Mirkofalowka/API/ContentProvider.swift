@@ -37,7 +37,7 @@ class ContentProvider {
         }
     }
     
-    func getNotifications(page: String, completion: @escaping ([Notification]) -> Void) {
+    func getNotifications(page: String, completion: @escaping ([[String: Any]]) -> Void) {//Notification/
 //        Parametry API    userkey – klucz użytkownika
 //        appkey – klucz aplikacji
 //        page - strona
@@ -58,19 +58,26 @@ class ContentProvider {
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil, userInfo: nil)
                 }
                 
-        }
-            .responseArray { (response: DataResponse<[Notification]>) in
-                guard let arr = response.result.value else {
-                    completion([])
+                if let json = response.result.value as? [[String: Any]] {
+                    completion(json)
                     return
                 }
                 
-                completion(arr)
+                completion([])
+                
         }
+//            .responseArray { (response: DataResponse<[Notification]>) in
+//                guard let arr = response.result.value else {
+//                    completion([])
+//                    return
+//                }
+//
+//                completion(arr)
+//        }
         
     }
     
-    func getUser(name: String, completion: ([String: Any]) -> Void) {
+    func getUser(name: String, completion: @escaping ([String: Any]) -> Void) {
         let address = baseAPI + "profile/index/" + name + "/appkey," + Wykop.key
         let sign = Wykop.secret + address
         let headers = ["apisign" : sign.md5()]
