@@ -14,7 +14,7 @@ protocol PostCellDelegate {
     func openSafari(with link: URL)
 }
 
-class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
+class PostCell: UITableViewCell {
     var delegate: PostCellDelegate?
     
     @IBOutlet weak var authorName: UILabel!
@@ -71,52 +71,6 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
         layoutIfNeeded()
     }
     
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        
-        let storyboard = UIStoryboard(name: "ImagePreview", bundle: nil)
-        
-        guard let detailViewController =
-            storyboard.instantiateInitialViewController() as? ImagePreview else { return nil }
-        
-        let viewsTo3DTouch = [avatar, postImage]
-        
-        for (index, view) in viewsTo3DTouch.enumerated() where touchedView(view: view!, location: location) {
-            if view == avatar {
-                if let post = cellPost {
-                    detailViewController.webSite = post.avatarURLString.replacingOccurrences(of: ",q60", with: "")
-                } else {
-                    detailViewController.webSite = cellComment!.avatarURLString.replacingOccurrences(of: ",q60", with: "")
-                }
-                previewingContext.sourceRect = avatar.frame
-            } else {
-                if let post = cellPost {
-                    detailViewController.webSite = post.embed.url!
-                } else {
-                    detailViewController.webSite = cellComment!.embed.url!
-                }
-                previewingContext.sourceRect = postImage.frame
-            }
-            
-            detailViewController.preferredContentSize =
-                CGSize(width: 0.0, height: 600)
-            
-            
-            return detailViewController
-        }
-        
-        return nil
-    }
-    
-    private func touchedView(view: UIView, location: CGPoint) -> Bool {
-        let locationInView = view.convert(location, from: contentView)
-        return view.bounds.contains(locationInView)
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-    }
-    
     func setup(post: Comment, index: IndexPath) {
         cellComment = post
         safariButton.isHidden = true
@@ -159,6 +113,7 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
         self.avatar.layer.borderWidth = 2
         self.avatar.layer.borderColor = authorSex == .male ? UIColor.blue.cgColor : UIColor.pinkColor().cgColor
     }
+    
     @IBAction func openUserAvatar(_ sender: Any) {
         
     }
@@ -181,4 +136,53 @@ class PostCell: UITableViewCell, UIViewControllerPreviewingDelegate {
         super.layoutSubviews()
     }
     
+}
+
+extension PostCell: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        let storyboard = UIStoryboard(name: "ImagePreview", bundle: nil)
+        
+        guard let detailViewController =
+            storyboard.instantiateInitialViewController() as? ImagePreview else { return nil }
+        
+        let viewsTo3DTouch = [avatar, postImage]
+        
+        for (_, view) in viewsTo3DTouch.enumerated() where touchedView(view: view!, location: location) {
+            if view == avatar {
+                if let post = cellPost {
+                    detailViewController.webSite = post.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                } else {
+                    detailViewController.webSite = cellComment!.avatarURLString.replacingOccurrences(of: ",q60", with: "")
+                }
+                previewingContext.sourceRect = avatar.frame
+            } else {
+                if let post = cellPost {
+                    detailViewController.webSite = post.embed.url!
+                } else {
+                    detailViewController.webSite = cellComment!.embed.url!
+                }
+                previewingContext.sourceRect = postImage.frame
+            }
+            
+            detailViewController.preferredContentSize =
+                CGSize(width: 0.0, height: 600)
+            
+            
+            return detailViewController
+        }
+        
+        return nil
+    }
+    
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+    }
+    
+    private func touchedView(view: UIView, location: CGPoint) -> Bool {
+        let locationInView = view.convert(location, from: contentView)
+        return view.bounds.contains(locationInView)
+    }
 }
