@@ -9,7 +9,6 @@
 
 import Foundation
 import UIKit
-import LFTwitterProfile
 
 class UserProfile: TwitterProfileViewController {
     let contentProvider = ContentProvider()

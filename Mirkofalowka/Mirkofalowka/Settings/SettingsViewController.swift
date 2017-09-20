@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import LFTwitterProfile
 
 class SettingsViewController: TwitterProfileViewController {
     let contentProvider = ContentProvider()
@@ -35,12 +34,15 @@ class SettingsViewController: TwitterProfileViewController {
         // TableViews
         let _tweetTableView = UITableView(frame: CGRect.zero, style: .plain)
         self.tweetTableView = _tweetTableView
+        self.tweetTableView.backgroundColor = UIColor(red: 0x1C, green: 0x1C, blue: 0x1C)
         
         let _photosTableView = UITableView(frame: CGRect.zero, style: .plain)
         self.photosTableView = _photosTableView
+        self.photosTableView.backgroundColor = UIColor(red: 0x1C, green: 0x1C, blue: 0x1C)
         
         let _favoritesTableView = UITableView(frame: CGRect.zero, style: .plain)
         self.favoritesTableView = _favoritesTableView
+        self.favoritesTableView.backgroundColor = UIColor(red: 0x1C, green: 0x1C, blue: 0x1C)
         
         self.setupTables()
     }
@@ -50,11 +52,12 @@ class SettingsViewController: TwitterProfileViewController {
         super.viewDidLoad()
         
         contentProvider.getUser(name: "wczoraj") { userDict in
-            self.username = userDict["login"] as? String
+            self.username = "@" + (userDict["login"] as? String ?? "")
             self.locationString = userDict["city"] as? String
+//            self.descriptionString = ""
         }
         
-        self.profileImage = UIImage.init(named: "icon.png")
+        self.profileImage = UIImage.init(named: "avatar")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -114,16 +117,22 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         case self.tweetTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath)
             cell.textLabel?.text = "Row \(indexPath.row)"
+            cell.textLabel?.textColor = .white
+            cell.backgroundColor = .clear
             return cell
             
         case self.photosTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "photoCell", for: indexPath)
             cell.textLabel?.text = "Photo \(indexPath.row)"
+            cell.textLabel?.textColor = .white
+            cell.backgroundColor = .clear
             return cell
             
         case self.favoritesTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath)
             cell.textLabel?.text = "Fav \(indexPath.row)"
+            cell.textLabel?.textColor = .white
+            cell.backgroundColor = .clear
             return cell
             
         default:
@@ -131,24 +140,4 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-
-//class SettingsViewController: UIViewController {
-//    let loginProvider = LoginProvider()
-//
-//    @IBAction func logowanie(_ sender: Any) {
-//        login()
-//
-//    }
-//
-//    func login() {
-//        loginProvider.login() { success in
-//            if success {
-//                print("wow")
-//            } else {
-//                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "youNeedLoginNotif"), object: nil)
-//            }
-//        }
-//
-//    }
-//}
 

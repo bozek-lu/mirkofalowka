@@ -137,17 +137,17 @@ class ContentProvider {
         
         Alamofire.request(address, headers: headers)
             .responseJSON { response in
-                
+
                 print(response)
-                
+
             }
             .responseArray { (response: DataResponse<[MirkoPost]>) in
-                
+
                 guard let arr = response.result.value else {
                     completion([])
                     return
                 }
-                
+
                 completion(arr)
         }
     }

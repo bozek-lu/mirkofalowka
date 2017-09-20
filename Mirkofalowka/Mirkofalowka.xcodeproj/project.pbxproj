@@ -21,6 +21,13 @@
 		8948F8CA1ED86418003A3FD2 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8C91ED86418003A3FD2 /* MediaModel.swift */; };
 		8948F8CF1ED86D01003A3FD2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8CE1ED86D01003A3FD2 /* SettingsViewController.swift */; };
 		8948F8D11ED86D81003A3FD2 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8948F8D01ED86D81003A3FD2 /* NotificationsViewController.swift */; };
+		8956B5891F3520C100B4AD5D /* Bundle+Pod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FAD1F351F18002C4690 /* Bundle+Pod.swift */; };
+		8956B58A1F3520C400B4AD5D /* ProfileIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FAE1F351F18002C4690 /* ProfileIconView.swift */; };
+		8956B58B1F3520C700B4AD5D /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FAF1F351F18002C4690 /* RoundButton.swift */; };
+		8956B58C1F3520CA00B4AD5D /* TouchRespondScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FB01F351F18002C4690 /* TouchRespondScrollView.swift */; };
+		8956B58D1F3520CD00B4AD5D /* TwitterProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FB11F351F18002C4690 /* TwitterProfileHeaderView.swift */; };
+		8956B58E1F3520CF00B4AD5D /* TwitterProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893C1FB31F351F18002C4690 /* TwitterProfileViewController.swift */; };
+		8956B58F1F3520D500B4AD5D /* TwitterProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 893C1FB21F351F18002C4690 /* TwitterProfileHeaderView.xib */; };
 		898D52C01F2C140D00C92E0D /* UserProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 898D52BF1F2C140D00C92E0D /* UserProfile.storyboard */; };
 		898D52C21F2C141800C92E0D /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898D52C11F2C141800C92E0D /* UserProfile.swift */; };
 		898D52C41F2C1F6500C92E0D /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898D52C31F2C1F6500C92E0D /* UserDetails.swift */; };
@@ -77,6 +84,13 @@
 		892FA4D41D6F4DE30079439A /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		892FA4D61D6F53030079439A /* MirkoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MirkoViewController.swift; sourceTree = "<group>"; };
 		893588421D9D9029002F2EA8 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		893C1FAD1F351F18002C4690 /* Bundle+Pod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Pod.swift"; sourceTree = "<group>"; };
+		893C1FAE1F351F18002C4690 /* ProfileIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileIconView.swift; sourceTree = "<group>"; };
+		893C1FAF1F351F18002C4690 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		893C1FB01F351F18002C4690 /* TouchRespondScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchRespondScrollView.swift; sourceTree = "<group>"; };
+		893C1FB11F351F18002C4690 /* TwitterProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterProfileHeaderView.swift; sourceTree = "<group>"; };
+		893C1FB21F351F18002C4690 /* TwitterProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwitterProfileHeaderView.xib; sourceTree = "<group>"; };
+		893C1FB31F351F18002C4690 /* TwitterProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterProfileViewController.swift; sourceTree = "<group>"; };
 		8948F8C71ED85CB6003A3FD2 /* Mirkofalowka.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mirkofalowka.entitlements; sourceTree = "<group>"; };
 		8948F8C91ED86418003A3FD2 /* MediaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		8948F8CE1ED86D01003A3FD2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +174,7 @@
 		892B49CF1D78918500268B0C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				893C1FAA1F351F18002C4690 /* LFTwitterProfile */,
 				892B49CD1D78911500268B0C /* Constants.swift */,
 				892FA4D41D6F4DE30079439A /* Extensions.swift */,
 			);
@@ -188,6 +203,36 @@
 				89CDE21E1D9D8E7F0002C0A7 /* PostProvider.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		893C1FAA1F351F18002C4690 /* LFTwitterProfile */ = {
+			isa = PBXGroup;
+			children = (
+				893C1FAB1F351F18002C4690 /* LFTwitterProfile */,
+			);
+			path = LFTwitterProfile;
+			sourceTree = "<group>";
+		};
+		893C1FAB1F351F18002C4690 /* LFTwitterProfile */ = {
+			isa = PBXGroup;
+			children = (
+				893C1FAC1F351F18002C4690 /* Classes */,
+			);
+			path = LFTwitterProfile;
+			sourceTree = "<group>";
+		};
+		893C1FAC1F351F18002C4690 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				893C1FAD1F351F18002C4690 /* Bundle+Pod.swift */,
+				893C1FAE1F351F18002C4690 /* ProfileIconView.swift */,
+				893C1FAF1F351F18002C4690 /* RoundButton.swift */,
+				893C1FB01F351F18002C4690 /* TouchRespondScrollView.swift */,
+				893C1FB11F351F18002C4690 /* TwitterProfileHeaderView.swift */,
+				893C1FB21F351F18002C4690 /* TwitterProfileHeaderView.xib */,
+				893C1FB31F351F18002C4690 /* TwitterProfileViewController.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		8948F8C81ED861B0003A3FD2 /* ViewControllers */ = {
@@ -461,6 +506,7 @@
 				89B472581F2BAE10002873C0 /* ImagePreview.storyboard in Resources */,
 				89CA2EE91D6BA3F70088BE95 /* Notifications.storyboard in Resources */,
 				89CA2EB81D6B9ABD0088BE95 /* Main.storyboard in Resources */,
+				8956B58F1F3520D500B4AD5D /* TwitterProfileHeaderView.xib in Resources */,
 				89F1CE611E3927BF005E5448 /* PostCell.xib in Resources */,
 				898D52C01F2C140D00C92E0D /* UserProfile.storyboard in Resources */,
 				89CA2EE41D6BA2FE0088BE95 /* Mirko.storyboard in Resources */,
@@ -540,8 +586,12 @@
 				8928AD031D7372E5002A0E7F /* HotViewController.swift in Sources */,
 				893588431D9D9029002F2EA8 /* Comment.swift in Sources */,
 				898D52C21F2C141800C92E0D /* UserProfile.swift in Sources */,
+				8956B5891F3520C100B4AD5D /* Bundle+Pod.swift in Sources */,
 				89EF4C941F2C2AF2000CC2E2 /* Notification.swift in Sources */,
+				8956B58A1F3520C400B4AD5D /* ProfileIconView.swift in Sources */,
+				8956B58B1F3520C700B4AD5D /* RoundButton.swift in Sources */,
 				8928AD071D738EB2002A0E7F /* MirkoPost.swift in Sources */,
+				8956B58E1F3520CF00B4AD5D /* TwitterProfileViewController.swift in Sources */,
 				89FC066D1DA80CED00933EBD /* LoginController.swift in Sources */,
 				8948F8CA1ED86418003A3FD2 /* MediaModel.swift in Sources */,
 				8948F8CF1ED86D01003A3FD2 /* SettingsViewController.swift in Sources */,
@@ -551,6 +601,8 @@
 				892FA4D71D6F53030079439A /* MirkoViewController.swift in Sources */,
 				89CDE21D1D9D8DB20002C0A7 /* PostController.swift in Sources */,
 				892FA4D51D6F4DE30079439A /* Extensions.swift in Sources */,
+				8956B58D1F3520CD00B4AD5D /* TwitterProfileHeaderView.swift in Sources */,
+				8956B58C1F3520CA00B4AD5D /* TouchRespondScrollView.swift in Sources */,
 				89F1CE631E3934DF005E5448 /* MainTabBarController.swift in Sources */,
 				892FA4D31D6F45F30079439A /* LoginProvider.swift in Sources */,
 				89B4725B1F2BAE2E002873C0 /* ImagePreview.swift in Sources */,
